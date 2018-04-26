@@ -2,6 +2,7 @@ package com.hengda.hengdasports.utils;
 
 import android.content.Context;
 import android.net.ConnectivityManager;
+import com.hengda.hengdasports.base.ActivityManager;
 
 /**
  * Created by Administrator on 2017/6/16.

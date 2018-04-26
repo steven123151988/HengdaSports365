@@ -38,7 +38,7 @@ public class BannerBaseView extends RelativeLayout implements BannerViewBehavior
 		return mViewPager;
 	}
 
-	// FIXME 当首页banner数据多于1条时，再添加页码指示器
+	//当首页banner数据多于1条时，再添加页码指示器
 	private CirclePageIndicator mIndicator;
 	private PagerAdapter mAdapter;
 	private Handler cutHandler;

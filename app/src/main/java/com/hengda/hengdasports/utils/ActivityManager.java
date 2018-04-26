@@ -23,6 +23,7 @@ public class ActivityManager {
         if (mCurrentActivityWeakRef != null) {
             currentActivity = mCurrentActivityWeakRef.get();
         }
+        LogUtil.e("=====currentActivity======"+currentActivity);
         return currentActivity;
     }
 

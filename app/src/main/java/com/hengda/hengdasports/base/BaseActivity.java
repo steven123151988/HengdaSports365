@@ -1,6 +1,7 @@
 package com.hengda.hengdasports.base;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -17,13 +18,14 @@ import butterknife.ButterKnife;
  */
 
 public abstract class BaseActivity extends AppCompatActivity {
-
+    public Context mContext;
 //    private SimpleProgressDialog mProgressDialog;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(this.getLayoutId());
+        mContext=this;
         initStatusBar();
         ButterKnife.bind(this);
         initView(savedInstanceState);

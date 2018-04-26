@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white_ffffff"
+    android:orientation="horizontal">
+
+
+    <LinearLayout
+        android:id="@+id/ll_chongzhi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:padding="@dimen/dimen_10">
+
+        <ImageView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:src="@mipmap/shouye_chongzhi" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:padding="@dimen/dimen_15"
+            android:text="充值"
+            android:textColor="@color/black_212121"
+            android:textSize="@dimen/sp_15" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_shiwan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:padding="@dimen/dimen_10">
+
+        <ImageView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:src="@mipmap/shiwan" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:padding="@dimen/dimen_15"
+            android:text="试玩"
+            android:textColor="@color/black_212121"
+            android:textSize="@dimen/sp_15" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_youhui"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:padding="@dimen/dimen_10">
+
+        <ImageView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:src="@mipmap/youhui" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:padding="@dimen/dimen_15"
+            android:text="优惠"
+            android:textColor="@color/black_212121"
+            android:textSize="@dimen/sp_15" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_kefu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:padding="@dimen/dimen_10">
+
+        <ImageView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:src="@mipmap/shouye_service" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:padding="@dimen/dimen_15"
+            android:text="客服"
+            android:textColor="@color/black_212121"
+            android:textSize="@dimen/sp_15" />
+
+
+    </LinearLayout>
+</LinearLayout>
+

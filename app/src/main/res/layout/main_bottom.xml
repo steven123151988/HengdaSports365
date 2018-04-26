@@ -27,7 +27,7 @@
                 android:duplicateParentState="true"
                 android:focusableInTouchMode="false"
                 android:scaleType="fitCenter"
-                android:src="@drawable/ic_launcher" />
+                android:src="@drawable/selector_main_shouye_icon" />
 
             <TextView
                 android:id="@+id/tv_home"
@@ -54,7 +54,7 @@
                 android:duplicateParentState="true"
                 android:focusableInTouchMode="false"
                 android:scaleType="fitCenter"
-                android:src="@drawable/ic_launcher" />
+                android:src="@drawable/selector_main_betresults_icon" />
 
             <TextView
                 android:id="@+id/tv_betting"
@@ -82,7 +82,7 @@
                 android:duplicateParentState="true"
                 android:focusableInTouchMode="false"
                 android:scaleType="fitCenter"
-                android:src="@drawable/ic_launcher" />
+                android:src="@drawable/selector_main_myorder_icon" />
 
             <TextView
                 android:id="@+id/tv_money"
@@ -110,7 +110,7 @@
                 android:duplicateParentState="true"
                 android:focusableInTouchMode="false"
                 android:scaleType="fitCenter"
-                android:src="@drawable/ic_launcher" />
+                android:src="@drawable/selector_main_mine_icon" />
 
             <TextView
                 android:id="@+id/tv_mine"

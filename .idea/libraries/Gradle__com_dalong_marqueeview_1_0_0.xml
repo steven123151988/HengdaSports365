@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: com.dalong:marqueeview-1.0.0">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.android/build-cache/df900aec99cab63e7626dea372b29c300f1d3367/output/res" />
+      <root url="jar://$USER_HOME$/.android/build-cache/df900aec99cab63e7626dea372b29c300f1d3367/output/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.dalong/marqueeview/1.0.0/835614fea6a36980ad64307b10b84e66b95aa58d/marqueeview-1.0.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/Users/steven/.gradle/caches/modules-2/files-2.1/com.android.support.constraint/constraint-layout-solver/1.1.0/931532e953a477f876f2de18c2e7f16eee01078f/constraint-layout-solver-1.1.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="931532e953a477f876f2de18c2e7f16eee01078f">
+        <dex dex="/Users/steven/Downloads/HengdaSports/app/build/intermediates/transforms/dex/debug/folders/1000/10/constraint-layout-solver-1.1.0_05b45226ab0f10057b1ae250c169711a9f9aa92b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/steven/.android/build-cache/e80711912b15437e87b2628ff766bd3d64b721d2/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="f46121a7c3b3ba958fc27c39447ae205be23ac4a">
+        <dex dex="/Users/steven/Downloads/HengdaSports/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_82e0d2aa656032cf58fd14c635d4608b34f03713/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/steven/.android/build-cache/93d75b81a847f5632402348e27faeb64b95f9c76/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="40a6b8f05124eb9e6012e18b80a6dbd13440e283">
+        <dex dex="/Users/steven/Downloads/HengdaSports/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_f77f643d21f333baae95a905e022d4b6f1fe9d2a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/steven/.android/build-cache/10892e2d7659399e267b0736e6bd4b486aa34eb6/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="b1e0cd070d7cf659ece90e919bff76e7ddc32532">
+        <dex dex="/Users/steven/Downloads/HengdaSports/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_72dc3d4a23f7f3f4db11e8066184d8793d614a5c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/steven/.android/build-cache/5ea720e865b6954ab9bfa6c773dab95922180f8e/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="9068775bb0941e0fc1d4ff9adbf5d73475794955">
+        <dex dex="/Users/steven/Downloads/HengdaSports/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_2ccf25830b4eda3817753264906b392a534e0d00/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/steven/.android/build-cache/4812d06d24e0e12be2f3d41fa06769ecb1eff3ed/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="05e3d15c623cd98f0eb43c8249fb6151fae0786c">
+        <dex dex="/Users/steven/Downloads/HengdaSports/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_b20ab6ec192a5a4050edd7bc08b8812b3500e620/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/steven/.android/build-cache/2432a9c32bef3ae6c80a433d51b904af43cb9559/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="e04f28ac2dd9bbe48ced6fc87fedf46c2586f5d6">
+        <dex dex="/Users/steven/Downloads/HengdaSports/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_647a23c1104e56f3bf1ee3c88495e2d43437c74d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/steven/.android/build-cache/683a0301daf3c68fae19a65c3b12e86a31941cc6/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/steven/Downloads/HengdaSports/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_965a63e275d260f690f61e2f00bacf9f79e22c4d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/steven/.android/build-cache/ff964309f953abb966dc5510b8aa3c1453cb6281/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="d29e451fd5bcc265989bf80afd4f149d95d72e7d">
+        <dex dex="/Users/steven/Downloads/HengdaSports/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_b898a059826acec0a8bc27da4900d15d8d60c15c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/steven/.android/build-cache/3e55e589eb05bbf9ed9f692f41bf8be3a721f3c6/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="4961be1437163ab598620a3c907c0f3432936f51">
+        <dex dex="/Users/steven/Downloads/HengdaSports/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_83ffad9c7785a04cd7f8de4f4087880923e167da/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/steven/.android/build-cache/dc73a85c2338649c09f1695b3c63649146aea083/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="a7a0aa678c3bbadb67fb41df9e107f7ee9087902">
+        <dex dex="/Users/steven/Downloads/HengdaSports/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_251af728d493e22ee7e6a5e5da0cad8737fbbe24/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/steven/.android/build-cache/1fa28467dffdfd4cbbcc297275e986bf8219d1f6/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="a64026daf4819a589aea776f5deb19b257a104d1">
+        <dex dex="/Users/steven/Downloads/HengdaSports/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_9fa7dc81f306690a93f91cd19169fd1813ab04a5/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/steven/.android/build-cache/3d0f5e1f615ca9a20a2b205aa06fb2b17da32c2a/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="c2deeac83ffa1304264bc755c2ddb84e7a7fa239">
+        <dex dex="/Users/steven/Downloads/HengdaSports/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_da4f98a35855ea17cf6b9a42381c4c674815f457/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/steven/.android/build-cache/e681ec48f14ce7cc93d89e0cc5e6ef007699f553/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="cad1364721fc716a39bdc351d3637edb634c9aa5">
+        <dex dex="/Users/steven/Downloads/HengdaSports/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_26bd7f7ad97fddae81cab75b699475ac8646846b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/steven/.gradle/caches/modules-2/files-2.1/com.android.support/support-annotations/25.4.0/f6a2fc748ae3769633dea050563e1613e93c135e/support-annotations-25.4.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="f6a2fc748ae3769633dea050563e1613e93c135e">
+        <dex dex="/Users/steven/Downloads/HengdaSports/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-25.4.0_fb3624c070a416dbbd7ce730b3b35fc99171d809/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/steven/Downloads/HengdaSports/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="/Users/steven/Downloads/HengdaSports/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_bdab76f5a643d6df6574c1f6b5efef7131553ca2/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/steven/Downloads/HengdaSports/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="74bc824cc7e4e647aeb319e5ca91d378e7c6bc71">
+        <dex dex="/Users/steven/Downloads/HengdaSports/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_52ba76cf0a2d2c9d40cbc5569b3fcf298bb39439/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/steven/.android/build-cache/d5d8db2c54c52cc9c8709ce4e9466df5be7eb353/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="b77e50b3c31d0fc64148530f7077f79ec114b5b9">
+        <dex dex="/Users/steven/Downloads/HengdaSports/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_a4001b70887e31c96ccea28edc8ca9c36dd23d9c/classes.dex" />
+    </item>
+
+</items>

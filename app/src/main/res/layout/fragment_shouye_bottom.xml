@@ -62,7 +62,7 @@
                     android:layout_height="wrap_content"
                     android:text="足球"
                     android:textColor="@color/black_212121"
-                    android:textSize="20sp" />
+                    android:textSize="@dimen/sp_15" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -70,7 +70,7 @@
                     android:layout_marginTop="@dimen/dimen_10"
                     android:text="足球"
                     android:textColor="@color/black_212121"
-                    android:textSize="@dimen/sp_16" />
+                    android:textSize="@dimen/sp_13" />
 
             </LinearLayout>
         </LinearLayout>
@@ -102,7 +102,7 @@
                     android:layout_height="wrap_content"
                     android:text="篮球"
                     android:textColor="@color/black_212121"
-                    android:textSize="17sp" />
+                    android:textSize="@dimen/sp_15" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -110,7 +110,7 @@
                     android:layout_marginTop="@dimen/dimen_10"
                     android:text="篮球"
                     android:textColor="@color/black_212121"
-                    android:textSize="@dimen/sp_16" />
+                    android:textSize="@dimen/sp_13" />
 
             </LinearLayout>
         </LinearLayout>
@@ -152,7 +152,7 @@
                     android:layout_height="wrap_content"
                     android:text="棒球"
                     android:textColor="@color/black_212121"
-                    android:textSize="@dimen/sp_17" />
+                    android:textSize="@dimen/sp_15" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -160,7 +160,7 @@
                     android:layout_marginTop="@dimen/dimen_10"
                     android:text="网球"
                     android:textColor="@color/black_212121"
-                    android:textSize="@dimen/sp_16" />
+                    android:textSize="@dimen/sp_13" />
 
             </LinearLayout>
         </LinearLayout>
@@ -192,7 +192,7 @@
                     android:layout_height="wrap_content"
                     android:text="排球"
                     android:textColor="@color/black_212121"
-                    android:textSize="20sp" />
+                    android:textSize="@dimen/sp_15" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -200,7 +200,7 @@
                     android:layout_marginTop="@dimen/dimen_10"
                     android:text="排球"
                     android:textColor="@color/black_212121"
-                    android:textSize="@dimen/sp_16" />
+                    android:textSize="@dimen/sp_13" />
 
             </LinearLayout>
         </LinearLayout>

@@ -11,7 +11,7 @@
 
     <!-- android:radius 弧形的所有半径 -->
 
-    <corners android:radius="6dip" />
+    <corners android:radius="30dip" />
 
 
     <!-- 边框的宽度及颜色 -->

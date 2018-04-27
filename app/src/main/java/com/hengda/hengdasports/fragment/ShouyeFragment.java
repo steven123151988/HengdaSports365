@@ -45,7 +45,6 @@ public class ShouyeFragment extends BaseFragment {
     LinearLayout llNetball;
     @BindView(R.id.ll_volleyball)
     LinearLayout llVolleyball;
-    Unbinder unbinder;
 
     @Override
     protected int getLayoutId() {

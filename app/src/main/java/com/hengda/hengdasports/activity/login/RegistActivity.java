@@ -1,18 +1,16 @@
 package com.hengda.hengdasports.activity.login;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.hengda.hengdasports.R;
-import com.hengda.hengdasports.activity.MainActivity;
 import com.hengda.hengdasports.base.BaseActivity;
-import com.hengda.hengdasports.utils.ShowDialogUtil;
 import com.hengda.hengdasports.utils.SystemUtil;
 
 import butterknife.BindView;
@@ -21,32 +19,26 @@ import butterknife.OnClick;
 
 /**
  * Description:
- * Data：2018/4/25-11:24
+ * Data：2018/4/30-17:36
  * steven
  */
-public class LoginActivity extends BaseActivity {
+public class RegistActivity extends BaseActivity {
     @BindView(R.id.iv_back)
     ImageView ivBack;
     @BindView(R.id.tv_center_name)
     TextView tvCenterName;
     @BindView(R.id.edittext_account)
     EditText edittextAccount;
-    @BindView(R.id.view1)
-    View view1;
     @BindView(R.id.edittext_pwd)
     EditText edittextPwd;
-    @BindView(R.id.tv_forgetpsw)
-    TextView tvForgetpsw;
-    @BindView(R.id.btn_login)
-    Button btnLogin;
-    @BindView(R.id.tv_regist)
-    TextView tvRegist;
-    @BindView(R.id.tv_shiwan)
-    TextView tvShiwan;
+    @BindView(R.id.checkbox)
+    CheckBox checkbox;
+    @BindView(R.id.btn_regist)
+    Button btnRegist;
 
     @Override
     protected int getLayoutId() {
-        return R.layout.activity_login;
+        return R.layout.activity_regist;
     }
 
     @Override
@@ -56,28 +48,18 @@ public class LoginActivity extends BaseActivity {
 
     @Override
     protected void initView(@Nullable Bundle savedInstanceState) {
-        tvCenterName.setText("正式账号登陆");
-        SystemUtil.setfullScreen(LoginActivity.this);
-
+        SystemUtil.setfullScreen(RegistActivity.this);
+        tvCenterName.setText("注册");
     }
 
 
-
-    @OnClick({R.id.iv_back, R.id.tv_forgetpsw, R.id.btn_login, R.id.tv_regist, R.id.tv_shiwan})
+    @OnClick({R.id.iv_back, R.id.btn_regist})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.iv_back:
                 finish();
                 break;
-            case R.id.tv_forgetpsw:
-                ShowDialogUtil.showSuccessDialog(LoginActivity.this,"","请联系在线客服解决！");
-                break;
-            case R.id.btn_login:
-                break;
-            case R.id.tv_regist:
-                startActivity(new Intent(LoginActivity.this,RegistActivity.class));
-                break;
-            case R.id.tv_shiwan:
+            case R.id.btn_regist:
                 break;
         }
     }

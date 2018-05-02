@@ -23,21 +23,31 @@ import com.hengda.hengdasports.utils.LogUtil;
 import com.hengda.hengdasports.utils.NetUtil;
 import com.hengda.hengdasports.utils.SharePreferencesUtil;
 import com.hengda.hengdasports.utils.ShowDialogUtil;
+import com.hengda.hengdasports.utils.SystemUtil;
 import com.hengda.hengdasports.view.UploadApkDialog;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
 
 
-public class SplashActivity extends Activity {
+public class SplashActivity extends BaseActivity {
     private int sdk_version = Build.VERSION.SDK_INT;  // 进入之前获取手机的SDK版本号
     private UploadApkDialog uploadApkDialog;  //升级的对话框
     private SweetAlertDialog SweetAlertDialog;
     private LotteryVersion lotteryVersion2;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_splash);
+    protected int getLayoutId() {
+        return R.layout.activity_splash;
+    }
+
+    @Override
+    protected void initData() {
+
+    }
+
+    @Override
+    protected void initView(@Nullable Bundle savedInstanceState) {
+        SystemUtil.setfullScreen(SplashActivity.this);
         ImageView view = (ImageView) findViewById(R.id.iv);
         AlphaAnimation alphaAnimation = new AlphaAnimation(0.3f, 1.0f);
         alphaAnimation.setDuration(1000);
@@ -63,6 +73,7 @@ public class SplashActivity extends Activity {
             }
         });
     }
+
 
     @Override
     protected void onResume() {
@@ -180,23 +191,22 @@ public class SplashActivity extends Activity {
      * 查看登陆状态，若UID为空就要去登陆
      */
     private void initLogType() {
-//        if (SharePreferencesUtil.getString(mContext, SportsKey.UID, "0").equals("0")) {
-//            startActivity(new Intent(mContext, LoginActivity.class));
-//        } else {
-//            startActivity(new Intent(this, MainActivity.class));
-//        }
-//        finish();
+        if (SharePreferencesUtil.getString(mContext, SportsKey.UID, "0").equals("0")) {
+            startActivity(new Intent(mContext, MainActivity.class));
+        } else {
+            startActivity(new Intent(this, MainActivity.class));
+        }
+        finish();
 
-        startActivity(new Intent(this, MainActivity.class));
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
         ShowDialogUtil.dismissDialogs();
-        if (null != SweetAlertDialog)
+        if (null != SweetAlertDialog) {
             SweetAlertDialog.dismiss();
-
+        }
         if (null != uploadApkDialog) {
             uploadApkDialog.cancel();
         }

@@ -30,11 +30,11 @@ public abstract class BaseFragment extends Fragment {
      * ButterKnife解绑器
      */
     private Unbinder mUnBinder;
+
     /**
      * 加载框
      */
 //    private SimpleProgressDialog mProgressDialog;
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(getLayoutId(), container, false);
@@ -98,17 +98,15 @@ public abstract class BaseFragment extends Fragment {
         }
     }
 
-    protected   void initView() {
-        //子类按需实现
-    }
+    protected abstract int getLayoutId();
+
+    protected abstract void initView();
+
+    protected abstract void initData();
 
     protected boolean useEventBus() {
         return false;
     }
-
-    protected abstract int getLayoutId();
-
-    protected abstract void initData();
 
     @Override
     public void onDestroyView() {
@@ -120,11 +118,11 @@ public abstract class BaseFragment extends Fragment {
         mUnBinder.unbind();
         super.onDestroyView();
     }
+
     @Override
     public void onDestroy() {
         super.onDestroy();
     }
-
 
 
 }

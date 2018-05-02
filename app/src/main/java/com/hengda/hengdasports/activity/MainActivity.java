@@ -14,13 +14,13 @@ import android.widget.Toast;
 
 import com.hengda.hengdasports.R;
 import com.hengda.hengdasports.base.BaseActivity;
-import com.hengda.hengdasports.fragment.BetRecordsFragment;
-import com.hengda.hengdasports.fragment.MineFragment;
-import com.hengda.hengdasports.fragment.MybetsFragment;
-import com.hengda.hengdasports.fragment.ShouyeFragment;
+import com.hengda.hengdasports.fragment.main.BetRecordsFragment;
+import com.hengda.hengdasports.fragment.main.MineFragment;
+import com.hengda.hengdasports.fragment.main.MybetsFragment;
+import com.hengda.hengdasports.fragment.main.FirstFragment;
+import com.hengda.hengdasports.utils.SystemUtil;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class MainActivity extends BaseActivity {
@@ -57,7 +57,7 @@ public class MainActivity extends BaseActivity {
     private int currentFragmentIndex = -1; //记录当前显示的fragment
     private Fragment[] fragments;
     private View[] mllViews;
-    private ShouyeFragment shouyeFragment;
+    private FirstFragment shouyeFragment;
     private BetRecordsFragment betRecordsFragment;
     private MybetsFragment mybetsFragment;
     private MineFragment mineFragment;
@@ -75,8 +75,9 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void initView(@Nullable Bundle savedInstanceState) {
+        SystemUtil.setfullScreen(MainActivity.this);
         if (null == shouyeFragment)
-            shouyeFragment = new ShouyeFragment();
+            shouyeFragment = new FirstFragment();
         if (null == betRecordsFragment)
             betRecordsFragment = new BetRecordsFragment();
         if (null == mybetsFragment)

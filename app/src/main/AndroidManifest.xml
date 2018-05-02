@@ -58,6 +58,14 @@
             android:name="com.hengda.hengdasports.activity.MainActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
+        <activity
+            android:name="com.hengda.hengdasports.activity.login.LoginActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.hengda.hengdasports.activity.login.RegistActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

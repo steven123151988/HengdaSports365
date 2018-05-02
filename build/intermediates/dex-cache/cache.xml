@@ -3,21 +3,21 @@
 
     <item
         is-multidex="true"
+        jar="/Users/steven/HengdaSports365/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="a8d8d711ae4f2751827161b24e00d23c7f29aac5">
+        <dex dex="/Users/steven/HengdaSports365/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_48c6edb9361952322710049efe88263f0549d9a8/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/Users/steven/HengdaSports365/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.3"
         sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
         <dex dex="/Users/steven/HengdaSports365/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_796476f6866816c26d2c580d246366884082a0a9/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/steven/HengdaSports365/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.3"
-        sha1="94754bd784225336fc1732aa46116eddf0dd0f4f">
-        <dex dex="/Users/steven/HengdaSports365/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_48c6edb9361952322710049efe88263f0549d9a8/classes.dex" />
     </item>
 
 </items>

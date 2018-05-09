@@ -192,7 +192,7 @@ public class SplashActivity extends BaseActivity {
      */
     private void initLogType() {
         if (SharePreferencesUtil.getString(mContext, SportsKey.UID, "0").equals("0")) {
-            startActivity(new Intent(mContext, MainActivity.class));
+            startActivity(new Intent(mContext, LoginActivity.class));
         } else {
             startActivity(new Intent(this, MainActivity.class));
         }

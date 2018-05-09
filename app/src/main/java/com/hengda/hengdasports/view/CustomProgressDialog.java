@@ -12,53 +12,52 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-
+import com.hengda.hengdasports.R;
 
 
 /**
- *  请求网络时间的动画效果
+ * 请求网络时间的动画效果
  */
 public class CustomProgressDialog extends Dialog {
-	public CustomProgressDialog(@NonNull Context context) {
-		super(context);
-	}
 
-	public CustomProgressDialog(@NonNull Context context, int themeResId) {
-		super(context, themeResId);
-	}
+    public CustomProgressDialog(@NonNull Context context, int themeResId) {
+        super(context, themeResId);
+    }
 
-	protected CustomProgressDialog(@NonNull Context context, boolean cancelable, @Nullable OnCancelListener cancelListener) {
-		super(context, cancelable, cancelListener);
-	}
-//	AnimationDrawable animation;
-//	public CustomProgressDialog(Context context) {
-//		super(context, R.style.my_dialog);
-//	}
-//
-//	@Override
-//	protected void onCreate(Bundle savedInstanceState) {
-//		super.onCreate(savedInstanceState);
-//		LinearLayout ll = new LinearLayout(getContext());
-//		ll.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
-//		ll.setOrientation(LinearLayout.VERTICAL);
-//		ll.setGravity(Gravity.CENTER);
-//
-//		ImageView iv = new ImageView(getContext());
-//		iv.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
-//		iv.setBackgroundResource(R.drawable.progress_round);
-//
-//		TextView tv= new TextView(getContext());
-//		LayoutParams mParams = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
-//		tv.setLayoutParams(mParams);
-//		tv.setPadding(0, 15, 0, 0);
-//		tv.setText("正加载中...");
-//		ll.addView(iv);
-//		ll.addView(tv);
-//		animation = (AnimationDrawable) iv.getBackground();
-//		if(animation!=null){
-//			animation.start();
-//		}
-//		setContentView(ll);
-//	}
+    protected CustomProgressDialog(@NonNull Context context, boolean cancelable, @Nullable OnCancelListener cancelListener) {
+        super(context, cancelable, cancelListener);
+    }
+
+    AnimationDrawable animation;
+
+    public CustomProgressDialog(Context context) {
+        super(context, R.style.my_dialog);
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        LinearLayout ll = new LinearLayout(getContext());
+        ll.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
+        ll.setOrientation(LinearLayout.VERTICAL);
+        ll.setGravity(Gravity.CENTER);
+
+        ImageView iv = new ImageView(getContext());
+        iv.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
+//        iv.setBackgroundResource(R.drawable.progress_round);
+
+        TextView tv = new TextView(getContext());
+        LayoutParams mParams = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+        tv.setLayoutParams(mParams);
+        tv.setPadding(0, 15, 0, 0);
+        tv.setText("正加载中...");
+        ll.addView(iv);
+        ll.addView(tv);
+        animation = (AnimationDrawable) iv.getBackground();
+        if (animation != null) {
+            animation.start();
+        }
+        setContentView(ll);
+    }
 
 }

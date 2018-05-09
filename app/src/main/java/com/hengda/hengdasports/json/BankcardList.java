@@ -1,5 +1,7 @@
 package com.hengda.hengdasports.json;
 
+import com.hengda.hengdasports.json2.BaseModel;
+
 import java.util.List;
 
 /**
@@ -7,7 +9,7 @@ import java.util.List;
  * Data：2018/4/10-16:21
  * steven
  */
-public class BankcardList extends BaseModel{
+public class BankcardList extends BaseModel {
 
     private List<DataBean> data;
 

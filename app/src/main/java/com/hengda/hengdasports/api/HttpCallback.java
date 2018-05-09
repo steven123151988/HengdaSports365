@@ -6,7 +6,7 @@ import android.support.annotation.NonNull;
 import com.google.gson.JsonParseException;
 import com.hengda.hengdasports.activity.login.LoginActivity;
 import com.hengda.hengdasports.base.SportsAPI;
-import com.hengda.hengdasports.json.BaseModel;
+import com.hengda.hengdasports.json2.BaseModel;
 import com.hengda.hengdasports.utils.ActivityManager;
 
 import org.json.JSONException;
@@ -39,10 +39,10 @@ public abstract class HttpCallback<T extends BaseModel> implements Callback<T> {
             /**
              *  接口getErrnum=0表示成功
              */
-            if (model.getErrnum() == 0) {
+            if (model.getCode() == 0) {
                 onSuccess(model);
             } else {
-                if (model.getErrnum() == -100) {
+                if (model.getCode() == -100) {
                     ActivityManager.getInstance().getCurrentActivity().
                             startActivity(new Intent(ActivityManager.getInstance().getCurrentActivity(), LoginActivity.class));
                 } else {
@@ -57,11 +57,8 @@ public abstract class HttpCallback<T extends BaseModel> implements Callback<T> {
     }
 
     private void onApiFailure(T model) {
-        msgCode = String.valueOf(model.getErrnum());
-        if (null != model.getError()) {
-            errormsg = String.valueOf(model.getError());
-        }
-
+        msgCode = String.valueOf(model.getCode());
+        errormsg = String.valueOf(model.getMsg());
         onFailure(msgCode, errormsg);
     }
 

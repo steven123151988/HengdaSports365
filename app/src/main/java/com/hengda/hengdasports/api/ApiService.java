@@ -1,9 +1,13 @@
 package com.hengda.hengdasports.api;
+
+import com.hengda.hengdasports.base.SportsAPI;
 import com.hengda.hengdasports.json.HotgameRsp;
 import com.hengda.hengdasports.json.LoginRsps;
 import com.hengda.hengdasports.json.RegistRsp;
 import com.hengda.hengdasports.json.getGameDataRsp;
 import com.hengda.hengdasports.json.getUserInfo;
+import com.hengda.hengdasports.json2.HomeindexRsp;
+import com.hengda.hengdasports.json2.LoginRsp;
 
 import okhttp3.RequestBody;
 import retrofit2.Call;
@@ -11,17 +15,38 @@ import retrofit2.http.Body;
 import retrofit2.http.POST;
 
 public interface ApiService {
-//    /**
-//     * 登陆
-//     */
-//    @POST("service")
-//    Call<LoginRsps> login(@Body RequestBody body);
-//
-//    /**
-//     * 注册
-//     */
-//    @POST("service?action=Register&terminal_id=1")
-//    Call<RegistRsp> regist(@Body RequestBody body);
+    /**
+     * 登陆
+     */
+    @POST("login/login")
+    Call<LoginRsp> login(@Body RequestBody body);
+
+    /**
+     * 注册
+     */
+    @POST("member/register/chk_reg")
+    Call<RegistRsp> regist(@Body RequestBody body);
+
+    /**
+     * 检查用户名是否被注册
+     */
+    @POST("member/register/chk_user")
+    Call<LoginRsp> checkUser(@Body RequestBody body);
+
+    /**
+     * 登出
+     */
+    @POST("login/loginout")
+    Call<LoginRsp> loginOut(@Body RequestBody body);
+
+    /**
+     *  获取首页数据
+     */
+
+    @POST("/")
+    Call<HomeindexRsp> homeIndex(@Body RequestBody body);
+
+
 //
 //    /**
 //     * 获取当前用户详情
@@ -193,17 +218,7 @@ public interface ApiService {
 //
 //
 //
-//    /**
-//     * 检查用户名
-//     */
-//    @POST(SportsAPI.CHECK_USER)
-//    Call<LoginRsp> checkUser(@Body RequestBody body);
-//
-//    /**
-//     * 注册
-//     */
-//    @POST(SportsAPI.REGIST)
-//    Call<LoginRsp> gotoRegist(@Body RequestBody body);
+
 //
 //    /**
 //     * 升级APP
@@ -256,10 +271,6 @@ public interface ApiService {
 //    @POST(SportsAPI.MEM_ONLINE)
 //    Call<MemOnlineRsp> memOnline(@Body RequestBody body);
 //
-//    /**
-//     * 登出
-//     */
-//    @POST(SportsAPI.LOGIN_OUT)
-//    Call<LoginRsp> loginOut(@Body RequestBody body);
+
 
 }

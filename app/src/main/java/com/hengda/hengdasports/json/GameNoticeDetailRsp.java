@@ -1,5 +1,7 @@
 package com.hengda.hengdasports.json;
 
+import com.hengda.hengdasports.json2.BaseModel;
+
 /**
  * Description:
  * Data：2018/4/18-20:42

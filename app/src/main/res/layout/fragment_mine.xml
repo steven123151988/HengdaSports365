@@ -13,10 +13,10 @@
         android:orientation="vertical">
 
         <RelativeLayout
-            android:layout_marginTop="@dimen/dimen_20"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/dimen_15">
+            android:layout_marginLeft="@dimen/dimen_15"
+            android:layout_marginTop="@dimen/dimen_20">
 
             <ImageView
                 android:id="@+id/iv_person"
@@ -106,6 +106,7 @@
                     android:orientation="vertical">
 
                     <RelativeLayout
+                        android:id="@+id/rl_withdrawcash"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
@@ -139,6 +140,7 @@
                     android:orientation="vertical">
 
                     <RelativeLayout
+                        android:id="@+id/rl_recharge"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"

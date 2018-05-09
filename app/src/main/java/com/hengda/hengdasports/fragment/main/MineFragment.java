@@ -1,5 +1,6 @@
 package com.hengda.hengdasports.fragment.main;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.LayoutInflater;
@@ -10,9 +11,13 @@ import android.view.animation.AnimationUtils;
 import android.view.animation.LinearInterpolator;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.hengda.hengdasports.R;
+import com.hengda.hengdasports.activity.mine.RechargeActivity;
+import com.hengda.hengdasports.activity.mine.SetActivity;
+import com.hengda.hengdasports.activity.mine.WithdrawCashActivity;
 import com.hengda.hengdasports.base.BaseFragment;
 
 import butterknife.BindView;
@@ -65,12 +70,16 @@ public class MineFragment extends BaseFragment {
     LinearLayout llAnquanzhongxin;
     @BindView(R.id.ll_xinxigonggao)
     LinearLayout llXinxigonggao;
-    Unbinder unbinder;
+    @BindView(R.id.rl_withdrawcash)
+    RelativeLayout rlWithdrawcash;
+    @BindView(R.id.rl_recharge)
+    RelativeLayout rlRecharge;
 
     @Override
     protected int getLayoutId() {
         return R.layout.fragment_mine;
     }
+
     @Override
     protected void initView() {
 
@@ -82,10 +91,17 @@ public class MineFragment extends BaseFragment {
 
     }
 
-    @OnClick({R.id.tv_set, R.id.iv_refresh, R.id.ll_zhudanjilu, R.id.ll_zhanghumingxi, R.id.ll_chongzhijilu, R.id.ll_tixianjilu, R.id.ll_wanfaguize, R.id.ll_xiangxisheding, R.id.ll_guizetiaokuan, R.id.ll_service, R.id.ll_jiarudaili, R.id.ll_zhanneixin, R.id.ll_anquanzhongxin, R.id.ll_xinxigonggao})
+    @OnClick({R.id.rl_withdrawcash, R.id.rl_recharge,R.id.tv_set, R.id.iv_refresh, R.id.ll_zhudanjilu, R.id.ll_zhanghumingxi, R.id.ll_chongzhijilu, R.id.ll_tixianjilu, R.id.ll_wanfaguize, R.id.ll_xiangxisheding, R.id.ll_guizetiaokuan, R.id.ll_service, R.id.ll_jiarudaili, R.id.ll_zhanneixin, R.id.ll_anquanzhongxin, R.id.ll_xinxigonggao})
     public void onViewClicked(View view) {
         switch (view.getId()) {
+            case R.id.rl_withdrawcash:
+                startActivity(new Intent(getActivity(), WithdrawCashActivity.class));
+                break;
+            case R.id.rl_recharge:
+                startActivity(new Intent(getActivity(), RechargeActivity.class));
+                break;
             case R.id.tv_set:
+                startActivity(new Intent(getActivity(), SetActivity.class));
                 break;
             case R.id.iv_refresh:
                 Animation operatingAnim = AnimationUtils.loadAnimation(getActivity(), R.anim.version_image_rotate);
@@ -136,6 +152,7 @@ public class MineFragment extends BaseFragment {
     public void stopRotate() {
         ivRefresh.clearAnimation();
     }
+
 
 
 }

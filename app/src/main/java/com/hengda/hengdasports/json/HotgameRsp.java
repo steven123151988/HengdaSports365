@@ -1,5 +1,7 @@
 package com.hengda.hengdasports.json;
 
+import com.hengda.hengdasports.json2.BaseModel;
+
 import java.io.Serializable;
 import java.util.List;
 
@@ -8,7 +10,7 @@ import java.util.List;
  * Data：2018/4/9-11:14
  * steven
  */
-public class HotgameRsp extends BaseModel{
+public class HotgameRsp extends BaseModel {
 
     private List<DataBean> data;
 

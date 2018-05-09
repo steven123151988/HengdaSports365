@@ -4,8 +4,13 @@ import android.content.Context;
 import android.support.v4.util.ArrayMap;
 
 
+import com.hengda.hengdasports.base.SportsAPI;
 import com.hengda.hengdasports.base.SportsKey;
+import com.hengda.hengdasports.json.LoginRsps;
+import com.hengda.hengdasports.json.RegistRsp;
 import com.hengda.hengdasports.json.getUserInfo;
+import com.hengda.hengdasports.json2.HomeindexRsp;
+import com.hengda.hengdasports.json2.LoginRsp;
 import com.hengda.hengdasports.utils.JsonUtil;
 import com.hengda.hengdasports.utils.SharePreferencesUtil;
 
@@ -107,43 +112,96 @@ public class HttpRequest {
 //        call.enqueue(callback);
 //    }
 
-//    /**
-//     * 登陆
-//     *
-//     * @param tag
-//     * @param callback
-//     */
-//    public void login(Object tag, String account, String psw, HttpCallback<LoginRsps> callback) {
-//        RequestBody body = new RequestBodyBuilder()
-//                .addParam(SportsKey.USER_NAME, account)
-//                .addParam(SportsKey.PASSWORD, psw)
-//                .addParam(SportsKey.ACTION, SportsAPI.LOGIN)
-//                .addParam("terminal_id", "1")
-//                .build();
-//        Call<LoginRsps> call = mService.login(body);
-//        putCall(tag, call);
-//        call.enqueue(callback);
-//    }
-//
-//    /**
-//     * 注册
-//     *
-//     * @param tag
-//     * @param account
-//     * @param psw
-//     * @param captcha
-//     * @param callback
-//     */
-//    public void regist(Object tag, String account, String psw, String captcha, HttpCallback<RegistRsp> callback) {
-//        RequestBody body = new RequestBodyBuilder()
-//                .addParam(SportsKey.USER_NAME, account)
-//                .addParam(SportsKey.PASSWORD, psw)
-//                .addParam(SportsKey.CAPTCHA, captcha)
-//                .build();
-//        Call<RegistRsp> call = mService.regist(body);
-//        putCall(tag, call);
-//        call.enqueue(callback);
-//    }
+    /**
+     * 登陆
+     *
+     * @param tag
+     * @param callback
+     */
+    public void login(Object tag, String account, String psw, HttpCallback<LoginRsp> callback) {
+        RequestBody body = new RequestBodyBuilder()
+                .addParam("username", account)
+                .addParam("password", psw)
+                .build();
+        Call<LoginRsp> call = mService.login(body);
+        putCall(tag, call);
+        call.enqueue(callback);
+    }
+
+    /**
+     * 登出
+     *
+     * @param tag
+     * @param uid
+     * @param callback
+     */
+    public void loginOut(Object tag, String uid, HttpCallback<LoginRsp> callback) {
+        RequestBody body = new RequestBodyBuilder()
+                .addParam("uid", uid)
+                .build();
+        Call<LoginRsp> call = mService.loginOut(body);
+        putCall(tag, call);
+        call.enqueue(callback);
+    }
+
+
+
+    /**
+     * 检查用户名是否已经被占用
+     *
+     * @param tag
+     * @param callback
+     */
+    public void checkUser(Object tag, String account, HttpCallback<LoginRsp> callback) {
+        RequestBody body = new RequestBodyBuilder()
+                .addParam("username", account)
+                .build();
+        Call<LoginRsp> call = mService.checkUser(body);
+        putCall(tag, call);
+        call.enqueue(callback);
+    }
+
+
+    /**
+     * 注册
+     *
+     * @param tag
+     * @param account
+     * @param psw
+     * @param recaptcha
+     * @param invitation_code
+     * @param callback
+     */
+    public void regist(Object tag, String account, String psw, String recaptcha, String invitation_code, HttpCallback<RegistRsp> callback) {
+        RequestBody body = new RequestBodyBuilder()
+                .addParam("username", account)
+                .addParam("password", psw)
+                .addParam("recaptcha", recaptcha)//验证吗
+                .addParam("invitation_code", invitation_code)// 邀请码
+                .build();
+        Call<RegistRsp> call = mService.regist(body);
+        putCall(tag, call);
+        call.enqueue(callback);
+    }
+
+
+
+
+    /**
+     * 首页基本数据
+     *
+     * @param tag
+     * @param callback
+     */
+    public void homeIndex(Object tag, HttpCallback<HomeindexRsp> callback) {
+        RequestBody body = new RequestBodyBuilder()
+                .build();
+        Call<HomeindexRsp> call = mService.homeIndex(body);
+        putCall(tag, call);
+        call.enqueue(callback);
+    }
+
+
 //
 //    /**
 //     * 获取首页热门赛事信息
@@ -629,62 +687,8 @@ public class HttpRequest {
 //
 //
 //
-//    /**
-//     * 检查用户名是否已经被占用
-//     *
-//     * @param tag
-//     * @param callback
-//     */
-//    public void checkUser(Object tag, String account, HttpCallback<LoginRsp> callback) {
-//        RequestBody body = new RequestBodyBuilder()
-//                .addParam(SportsKey.FNNAME, "chk_user")
-//                .addParam(SportsKey.USER_NAME, account)
-//                .build();
-//        Call<LoginRsp> call = mService.checkUser(body);
-//        putCall(tag, call);
-//        call.enqueue(callback);
-//    }
-//
-//    /**
-//     * 注册账户
-//     *
-//     * @param tag
-//     * @param account
-//     * @param psw
-//     * @param name
-//     * @param check_question
-//     * @param answer
-//     * @param money_psw
-//     * @param birthday
-//     * @param callback
-//     */
-//    public void gotoRegist(Object tag, String account, String psw,
-//                           String name, String check_question, String answer,
-//                           String money_psw, String birthday, HttpCallback<LoginRsp> callback) {
-//        RequestBody body = new RequestBodyBuilder()
-//                .addParam("fnName", "reg")
-//                .addParam("keys", "add")
-//                .addParam("website", "android")
-//                .addParam("website1", "android")
-//                .addParam("reg", "3")
-//                .addParam("username", account)//账号
-//                .addParam("password", psw)//密码
-//                .addParam("currency", "RMB")  //首选货币
-//                .addParam("alias", name)  //真实姓名
-//                .addParam("question", check_question) //密码提示问题
-//                .addParam("answer", answer)//答案
-//                .addParam("drpAuthCode", money_psw)
-//                .addParam("birthday", birthday)
-//                .addParam("contory", "中国")
-//                .addParam("city", "中国")
-//                .addParam("know_site", "0")
-//                .addParam("Checkbox", "1")  //是否选中已经满18岁
-//                .build();
-//        Call<LoginRsp> call = mService.gotoRegist(body);
-//        putCall(tag, call);
-//        call.enqueue(callback);
-//    }
-//
+
+
 //
 //    /**
 //     * app版本升级
@@ -836,21 +840,6 @@ public class HttpRequest {
 //        call.enqueue(callback);
 //    }
 //
-//    /**
-//     * 登出
-//     *
-//     * @param tag
-//     * @param uid
-//     * @param callback
-//     */
-//    public void loginOut(Object tag, String uid, HttpCallback<LoginRsp> callback) {
-//        RequestBody body = new RequestBodyBuilder()
-//                .addParam(SportsKey.UID, uid)
-//                .addParam(SportsKey.FNNAME, SportsKey.LOGIN_OUT)
-//                .build();
-//        Call<LoginRsp> call = mService.loginOut(body);
-//        putCall(tag, call);
-//        call.enqueue(callback);
-//    }
+
 
 }

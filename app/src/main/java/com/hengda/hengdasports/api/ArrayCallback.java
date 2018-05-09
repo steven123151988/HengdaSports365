@@ -6,7 +6,7 @@ import android.text.TextUtils;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParseException;
 import com.hengda.hengdasports.base.SportsAPI;
-import com.hengda.hengdasports.json.BaseModel;
+import com.hengda.hengdasports.json2.BaseModel;
 import com.hengda.hengdasports.utils.JsonUtil;
 
 import org.json.JSONException;
@@ -43,7 +43,7 @@ public abstract class ArrayCallback<T> implements Callback<JsonElement> {
             }
             if (element.isJsonObject()) {
                 BaseModel model = JsonUtil.fromJson(element, BaseModel.class);
-                if (!TextUtils.isEmpty( model.getErrnum()+"")&& Integer.valueOf(model.getErrnum())!=0) {
+                if (!TextUtils.isEmpty( model.getCode()+"")&& Integer.valueOf(model.getCode())!=0) {
                     onApiFailure(model);
                 }
             } else if (element.isJsonArray()) {

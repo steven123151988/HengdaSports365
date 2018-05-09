@@ -6,8 +6,14 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import com.hengda.hengdasports.R;
+import com.hengda.hengdasports.api.HttpCallback;
+import com.hengda.hengdasports.api.HttpRequest;
 import com.hengda.hengdasports.base.BaseFragment;
+import com.hengda.hengdasports.json2.HomeindexRsp;
+import com.hengda.hengdasports.json2.LoginRsp;
+import com.hengda.hengdasports.utils.LogUtil;
 import com.hengda.hengdasports.view.banner.BannerBaseView;
+import com.hengda.hengdasports.view.banner.BaseBannerBean;
 import com.hengda.hengdasports.view.banner.MainBannerView;
 
 import java.util.ArrayList;
@@ -44,6 +50,7 @@ public class FirstFragment extends BaseFragment {
     LinearLayout llNetball;
     @BindView(R.id.ll_volleyball)
     LinearLayout llVolleyball;
+    private BaseBannerBean  baseBannerBean;
 
     @Override
     protected int getLayoutId() {
@@ -52,31 +59,58 @@ public class FirstFragment extends BaseFragment {
 
     @Override
     protected void initView() {
-
-        marquee.setText(" huodp 活动公告");
-        marquee.start();
     }
+
 
     @Override
     protected void initData() {
 
+        HttpRequest.getInstance().homeIndex(FirstFragment.this, new HttpCallback<HomeindexRsp>() {
 
-        List<String> list = new ArrayList<>();
-        list.add("http://pic29.nipic.com/20130602/7447430_185802070000_2.jpg");
-        list.add("http://pic36.nipic.com/20131209/7487939_011617689000_2.jpg");
-        list.add("http://img5.imgtn.bdimg.com/it/u=2793250479,2216840076&fm=27&gp=0.jpg");
+            @Override
+            public void onSuccess(HomeindexRsp data) {
+                marquee.setText(data.getData().getNotice());
+                marquee.start();
 
-        if (null != getActivity()) {
-            BannerBaseView banner = new MainBannerView(getActivity());
-            bannerCont.addView(banner);
-            banner.update(list);
-            imgDefault.setVisibility(View.GONE);
-            bannerCont.setVisibility(View.VISIBLE);
+                List list = new ArrayList<>();
+                for (int i=0;i<data.getData().getSlide().size();i++){
+                    baseBannerBean=new BaseBannerBean(data.getData().getSlide().get(i).getImg(),data.getData().getSlide().get(i).getUrl());
+                    list.add(baseBannerBean);
+                }
 
-        }
+
+                if (null != getActivity()) {
+                    BannerBaseView banner = new MainBannerView(getActivity());
+                    bannerCont.addView(banner);
+                    banner.update(list);
+                    imgDefault.setVisibility(View.GONE);
+                    bannerCont.setVisibility(View.VISIBLE);
+
+                }
+
+            }
+
+            @Override
+            public void onFailure(String msgCode, String errorMsg) {
+            }
+        });
+
+
+
 
     }
 
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+//        if (!ifgetsuccess){
+//            LogUtil.e("======ifgetsuccess==="+ifgetsuccess);
+//            initData();
+//        }
+
+    }
 
     @OnClick({R.id.ll_chongzhi, R.id.ll_shiwan, R.id.ll_youhui, R.id.ll_kefu, R.id.ll_football, R.id.ll_basketball, R.id.ll_netball, R.id.ll_volleyball})
     public void onViewClicked(View view) {

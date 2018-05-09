@@ -1,6 +1,8 @@
 package com.hengda.hengdasports.json;
 
-public class LoginRsps extends BaseModel{
+import com.hengda.hengdasports.json2.BaseModel;
+
+public class LoginRsps extends BaseModel {
 
 
     /**

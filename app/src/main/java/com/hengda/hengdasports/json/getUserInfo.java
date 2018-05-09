@@ -1,5 +1,7 @@
 package com.hengda.hengdasports.json;
 
+import com.hengda.hengdasports.json2.BaseModel;
+
 /**
  * Description:获取当前用户详情
  * Data：2018/4/14-17:40

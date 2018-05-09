@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import com.hengda.hengdasports.R;
+import com.hengda.hengdasports.activity.webview.WebViewActivity;
 import com.hengda.hengdasports.utils.LogUtil;
 import com.squareup.picasso.Picasso;
 
@@ -185,7 +186,7 @@ public class BannerBaseView extends RelativeLayout implements BannerViewBehavior
     }
 
     private class BannerAdapter extends PagerAdapter {
-        private List datas;
+        private List<BaseBannerBean> datas;
 
         protected BannerAdapter(List datas) {
             this.datas = datas;
@@ -197,16 +198,25 @@ public class BannerBaseView extends RelativeLayout implements BannerViewBehavior
         }
 
         @Override
-        public Object instantiateItem(ViewGroup container, int position) {
+        public Object instantiateItem(ViewGroup container, final int position) {
             ImageView imageView = new ImageView(getContext());
-            String img_url = (String) datas.get(position);
+            String img_url = datas.get(position).getImg();
+            final String ac_url = datas.get(position).getUrl();
+
             Picasso.with(context).load(img_url)
                     .placeholder(R.mipmap.ic_launcher)
                     .error(R.mipmap.ic_launcher)
                     .fit()
 //					.centerCrop()
                     .into(imageView);
-
+            imageView.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(context, WebViewActivity.class);
+                    intent.putExtra("WebViewUrl", ac_url);
+                    context.startActivity(intent);
+                }
+            });
             container.addView(imageView);
             return imageView;
         }

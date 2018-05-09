@@ -1,5 +1,7 @@
 package com.hengda.hengdasports.json;
 
+import com.hengda.hengdasports.json2.BaseModel;
+
 /**
  * Created by Administrator on 2017/6/13.
  */

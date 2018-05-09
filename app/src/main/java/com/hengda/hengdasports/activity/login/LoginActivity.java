@@ -5,13 +5,20 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.hengda.hengdasports.R;
 import com.hengda.hengdasports.activity.MainActivity;
+import com.hengda.hengdasports.api.HttpCallback;
+import com.hengda.hengdasports.api.HttpRequest;
 import com.hengda.hengdasports.base.BaseActivity;
+import com.hengda.hengdasports.base.SportsKey;
+import com.hengda.hengdasports.json2.LoginRsp;
+import com.hengda.hengdasports.utils.SharePreferencesUtil;
 import com.hengda.hengdasports.utils.ShowDialogUtil;
 import com.hengda.hengdasports.utils.SystemUtil;
 
@@ -31,8 +38,6 @@ public class LoginActivity extends BaseActivity {
     TextView tvCenterName;
     @BindView(R.id.edittext_account)
     EditText edittextAccount;
-    @BindView(R.id.view1)
-    View view1;
     @BindView(R.id.edittext_pwd)
     EditText edittextPwd;
     @BindView(R.id.tv_forgetpsw)
@@ -43,6 +48,9 @@ public class LoginActivity extends BaseActivity {
     TextView tvRegist;
     @BindView(R.id.tv_shiwan)
     TextView tvShiwan;
+    @BindView(R.id.checkbox_rememberpsw)
+    CheckBox checkboxRememberpsw;
+    private boolean isChecked;
 
     @Override
     protected int getLayoutId() {
@@ -58,9 +66,31 @@ public class LoginActivity extends BaseActivity {
     protected void initView(@Nullable Bundle savedInstanceState) {
         tvCenterName.setText("正式账号登陆");
         SystemUtil.setfullScreen(LoginActivity.this);
+        /*
+         *  选择是否记住密码
+         */
+        isChecked = SharePreferencesUtil.getBoolean(getApplicationContext(), SportsKey.IF_REMEMBER_PSW, true);
+        CheckBox cbx = (CheckBox) findViewById(R.id.checkbox);
+        cbx.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean checked) {
+                isChecked = checked;
+                if (checked) {
+                    SharePreferencesUtil.addBoolean(getApplicationContext(), SportsKey.IF_REMEMBER_PSW, true);
+                } else {
+                    SharePreferencesUtil.addBoolean(getApplicationContext(), SportsKey.IF_REMEMBER_PSW, false);
+                }
+            }
+        });
+        cbx.setChecked(isChecked);
+        edittextAccount.setText(SharePreferencesUtil.getString(getApplicationContext(), SportsKey.USER_NAME, ""));
+        if (isChecked) {
+            edittextPwd.setText(SharePreferencesUtil.getString(getApplicationContext(), SportsKey.PASSWORD, ""));
+        } else {
+            edittextPwd.setText("");
+        }
 
     }
-
 
 
     @OnClick({R.id.iv_back, R.id.tv_forgetpsw, R.id.btn_login, R.id.tv_regist, R.id.tv_shiwan})
@@ -70,15 +100,43 @@ public class LoginActivity extends BaseActivity {
                 finish();
                 break;
             case R.id.tv_forgetpsw:
-                ShowDialogUtil.showSuccessDialog(LoginActivity.this,"","请联系在线客服解决！");
+                ShowDialogUtil.showSuccessDialog(LoginActivity.this, "", "请联系在线客服解决！");
                 break;
             case R.id.btn_login:
+                final String username = edittextAccount.getText().toString().replace(" ", "");
+                String psw = edittextPwd.getText().toString().replace(" ", "");
+                if (username.isEmpty()) {
+                    ShowDialogUtil.showFailDialog(LoginActivity.this, getString(R.string.sorry), "用户名字为空");
+                    return;
+                }
+                if (psw.isEmpty()) {
+                    ShowDialogUtil.showFailDialog(LoginActivity.this, getString(R.string.sorry), "密码为空");
+                    return;
+                }
+
+                HttpRequest.getInstance().login(LoginActivity.this, username, psw, new HttpCallback<LoginRsp>() {
+                    @Override
+                    public void onSuccess(LoginRsp data) {
+                        SharePreferencesUtil.addString(LoginActivity.this, SportsKey.UID, data.getData().getUid());
+                        SharePreferencesUtil.addString(LoginActivity.this, SportsKey.USER_NAME, username);
+                        SharePreferencesUtil.addString(LoginActivity.this, SportsKey.PASSWORD, username);
+                        startActivity(new Intent(LoginActivity.this, MainActivity.class));
+
+                    }
+
+                    @Override
+                    public void onFailure(String msgCode, String errorMsg) {
+                        ShowDialogUtil.showFailDialog(LoginActivity.this, getString(R.string.loginerr), errorMsg);
+                    }
+                });
                 break;
             case R.id.tv_regist:
-                startActivity(new Intent(LoginActivity.this,RegistActivity.class));
+                startActivity(new Intent(LoginActivity.this, RegistActivity.class));
                 break;
             case R.id.tv_shiwan:
                 break;
         }
     }
+
+
 }

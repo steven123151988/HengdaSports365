@@ -1,6 +1,8 @@
 package com.hengda.hengdasports.json;
 
 
+import com.hengda.hengdasports.json2.BaseModel;
+
 import java.util.List;
 
 /**

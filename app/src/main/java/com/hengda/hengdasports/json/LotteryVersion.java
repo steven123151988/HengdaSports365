@@ -1,6 +1,7 @@
 package com.hengda.hengdasports.json;
 
 
+import com.hengda.hengdasports.json2.BaseModel;
 
 public class LotteryVersion extends BaseModel {
 

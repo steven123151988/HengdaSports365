@@ -18,7 +18,9 @@ import com.hengda.hengdasports.fragment.main.BetRecordsFragment;
 import com.hengda.hengdasports.fragment.main.MineFragment;
 import com.hengda.hengdasports.fragment.main.MybetsFragment;
 import com.hengda.hengdasports.fragment.main.FirstFragment;
+import com.hengda.hengdasports.utils.LogUtil;
 import com.hengda.hengdasports.utils.SystemUtil;
+import com.hengda.hengdasports.utils.UserHelper;
 
 import butterknife.BindView;
 import butterknife.OnClick;

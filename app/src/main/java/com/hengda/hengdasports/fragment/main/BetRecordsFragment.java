@@ -1,12 +1,8 @@
 package com.hengda.hengdasports.fragment.main;
 
-import android.content.Intent;
-import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -21,7 +17,6 @@ import java.util.List;
 import java.util.Locale;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Unbinder;
 
@@ -34,7 +29,7 @@ public class BetRecordsFragment extends BaseFragment {
 
     @BindView(R.id.iv_back)
     ImageView ivBack;
-    @BindView(R.id.tv_bet_title)
+    @BindView(R.id.tv_center)
     TextView tvBetTitle;
     @BindView(R.id.ll_title)
     LinearLayout llTitle;
@@ -46,13 +41,11 @@ public class BetRecordsFragment extends BaseFragment {
     TabLayout tab;
     @BindView(R.id.pager)
     ViewPager pager;
-    Unbinder unbinder;
-
     private List list;
 
     @Override
     protected int getLayoutId() {
-        return R.layout.fragment_mybets;
+        return R.layout.fragment_betrecords;
     }
 
     @Override

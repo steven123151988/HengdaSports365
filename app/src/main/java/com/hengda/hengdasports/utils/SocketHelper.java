@@ -6,6 +6,7 @@ import com.dhh.websocket.WebSocketConsumer;
 import com.hengda.hengdasports.api.TrustAllCerts;
 import com.hengda.hengdasports.base.SportsKey;
 import com.hengda.hengdasports.json.SocketBase;
+import com.hengda.hengdasports.json2.getUserInfo;
 
 import java.security.SecureRandom;
 import java.util.concurrent.TimeUnit;
@@ -50,11 +51,11 @@ public class SocketHelper {
     }
 
     public void connectWebSocket() {
-        UserModel currUser = UserHelper.get().getCurrUser();
+        getUserInfo currUser = UserHelper.getInstance().getCurrUser();
         if (currUser == null) {
             return;
         }
-        final String url = String.format(SportsKey.WEB_SOCKET_URL, UserHelper.get().getSessionId(), UserHelper.get().getUserId());
+        final String url = String.format(SportsKey.WEB_SOCKET_URL, UserHelper.getInstance().getSessionId(), UserHelper.getInstance().getUserId());
         LogUtil.e(url);
         RxWebSocketUtil.getInstance().setClient(mClient);
         RxWebSocketUtil.getInstance().setShowLog(true);

@@ -1,12 +1,12 @@
 package com.hengda.hengdasports.api;
 
-import com.hengda.hengdasports.base.SportsAPI;
+import com.hengda.hengdasports.json.BindphoneRsp;
 import com.hengda.hengdasports.json.HotgameRsp;
-import com.hengda.hengdasports.json.LoginRsps;
 import com.hengda.hengdasports.json.RegistRsp;
-import com.hengda.hengdasports.json.getGameDataRsp;
-import com.hengda.hengdasports.json.getUserInfo;
+import com.hengda.hengdasports.json.getPicVerificationCodeRsp;
+import com.hengda.hengdasports.json2.getUserInfo;
 import com.hengda.hengdasports.json2.HomeindexRsp;
+import com.hengda.hengdasports.json2.InsideMail;
 import com.hengda.hengdasports.json2.LoginRsp;
 
 import okhttp3.RequestBody;
@@ -18,41 +18,67 @@ public interface ApiService {
     /**
      * 登陆
      */
-    @POST("login/login")
+    @POST("/login/login")
     Call<LoginRsp> login(@Body RequestBody body);
 
     /**
      * 注册
      */
-    @POST("member/register/chk_reg")
+    @POST("/member/register/chk_reg")
     Call<RegistRsp> regist(@Body RequestBody body);
 
     /**
      * 检查用户名是否被注册
      */
-    @POST("member/register/chk_user")
+    @POST("/member/register/chk_user")
     Call<LoginRsp> checkUser(@Body RequestBody body);
 
     /**
      * 登出
      */
-    @POST("login/loginout")
+    @POST("/login/loginout")
     Call<LoginRsp> loginOut(@Body RequestBody body);
 
     /**
-     *  获取首页数据
+     * 获取首页数据
      */
 
     @POST("/")
     Call<HomeindexRsp> homeIndex(@Body RequestBody body);
 
+    /**
+     * 获取验证码
+     */
+    @POST("/member/register/generate_captcha")
+    Call<BindphoneRsp> getVerificationCode(@Body RequestBody body);
 
-//
-//    /**
-//     * 获取当前用户详情
-//     */
-//    @POST("service")
-//    Call<getUserInfo> getUserInfo(@Body RequestBody body);
+
+    /**
+     * 获取图片验证码
+     */
+    @POST("/member/register/generate_captcha")
+    Call<getPicVerificationCodeRsp> getPicVerificationCode(@Body RequestBody body);
+
+    /**
+     * 站内信
+     */
+    @POST("/member/mesg/inbox?uid=ebdf43e5a0236621347era6")
+    Call<InsideMail> insideMail(@Body RequestBody body);
+
+    /**
+     * 获取当前用户详情
+     */
+    @POST("/member/member/account")
+    Call<getUserInfo> getUserInfo(@Body RequestBody body);
+
+
+    /**
+     * 获取盘后数据
+     */
+    @POST("home/get_match?uid=ebdf43e5a0236621347era6")
+    Call<HotgameRsp> getGamedata(@Body RequestBody body);
+
+
 //
 //    /**
 //     * 获取热门赛事信息
@@ -79,17 +105,8 @@ public interface ApiService {
 //    Call<BankcardList> GetBankList(@Body RequestBody body);
 //
 //
-//    /**
-//     * 获取验证码
-//     */
-//    @POST("service?action=Sendnote&terminal_id=1")
-//    Call<BindphoneRsp> getVerificationCode(@Body RequestBody body);
-//
-//    /**
-//     * 获取图片验证码
-//     */
-//    @POST("service?action=GetImgCaptcha&terminal_id=1")
-//    Call<getPicVerificationCodeRsp> getPicVerificationCode(@Body RequestBody body);
+
+
 //
 //    /**
 //     * 绑定手机号码

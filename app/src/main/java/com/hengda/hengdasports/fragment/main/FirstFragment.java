@@ -1,11 +1,13 @@
 package com.hengda.hengdasports.fragment.main;
 
+import android.content.Intent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import com.hengda.hengdasports.R;
+import com.hengda.hengdasports.activity.bet.BetdetailAcivity;
 import com.hengda.hengdasports.api.HttpCallback;
 import com.hengda.hengdasports.api.HttpRequest;
 import com.hengda.hengdasports.base.BaseFragment;
@@ -51,6 +53,7 @@ public class FirstFragment extends BaseFragment {
     @BindView(R.id.ll_volleyball)
     LinearLayout llVolleyball;
     private BaseBannerBean  baseBannerBean;
+    private Intent intent;
 
     @Override
     protected int getLayoutId() {
@@ -114,6 +117,7 @@ public class FirstFragment extends BaseFragment {
 
     @OnClick({R.id.ll_chongzhi, R.id.ll_shiwan, R.id.ll_youhui, R.id.ll_kefu, R.id.ll_football, R.id.ll_basketball, R.id.ll_netball, R.id.ll_volleyball})
     public void onViewClicked(View view) {
+
         switch (view.getId()) {
             case R.id.ll_chongzhi:
                 break;
@@ -124,8 +128,14 @@ public class FirstFragment extends BaseFragment {
             case R.id.ll_kefu:
                 break;
             case R.id.ll_football:
+                intent=new Intent(getActivity(), BetdetailAcivity.class);
+                intent.putExtra("ball","FT");
+                startActivity(intent);
                 break;
             case R.id.ll_basketball:
+                intent=new Intent(getActivity(), BetdetailAcivity.class);
+                intent.putExtra("ball","BK");
+                startActivity(intent);
                 break;
             case R.id.ll_netball:
                 break;

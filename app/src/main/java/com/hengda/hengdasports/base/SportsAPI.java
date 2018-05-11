@@ -2,7 +2,7 @@ package com.hengda.hengdasports.base;
 
 
 public class SportsAPI {
-    public static String BASE_URL = "http://118.184.29.2:8080/";
+    public static String BASE_URL = "http://192.168.254.108/index.php/";
     public static final String LOGIN = "login";//登陆
 
 

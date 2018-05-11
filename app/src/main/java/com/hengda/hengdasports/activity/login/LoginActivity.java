@@ -17,13 +17,14 @@ import com.hengda.hengdasports.api.HttpCallback;
 import com.hengda.hengdasports.api.HttpRequest;
 import com.hengda.hengdasports.base.BaseActivity;
 import com.hengda.hengdasports.base.SportsKey;
+import com.hengda.hengdasports.json2.getUserInfo;
 import com.hengda.hengdasports.json2.LoginRsp;
 import com.hengda.hengdasports.utils.SharePreferencesUtil;
 import com.hengda.hengdasports.utils.ShowDialogUtil;
 import com.hengda.hengdasports.utils.SystemUtil;
+import com.hengda.hengdasports.utils.UserHelper;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 /**
@@ -70,19 +71,13 @@ public class LoginActivity extends BaseActivity {
          *  选择是否记住密码
          */
         isChecked = SharePreferencesUtil.getBoolean(getApplicationContext(), SportsKey.IF_REMEMBER_PSW, true);
-        CheckBox cbx = (CheckBox) findViewById(R.id.checkbox);
-        cbx.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        checkboxRememberpsw.setChecked(isChecked);
+        checkboxRememberpsw.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean checked) {
-                isChecked = checked;
-                if (checked) {
-                    SharePreferencesUtil.addBoolean(getApplicationContext(), SportsKey.IF_REMEMBER_PSW, true);
-                } else {
-                    SharePreferencesUtil.addBoolean(getApplicationContext(), SportsKey.IF_REMEMBER_PSW, false);
-                }
+                SharePreferencesUtil.addBoolean(getApplicationContext(), SportsKey.IF_REMEMBER_PSW, checked);
             }
         });
-        cbx.setChecked(isChecked);
         edittextAccount.setText(SharePreferencesUtil.getString(getApplicationContext(), SportsKey.USER_NAME, ""));
         if (isChecked) {
             edittextPwd.setText(SharePreferencesUtil.getString(getApplicationContext(), SportsKey.PASSWORD, ""));
@@ -120,7 +115,8 @@ public class LoginActivity extends BaseActivity {
                         SharePreferencesUtil.addString(LoginActivity.this, SportsKey.UID, data.getData().getUid());
                         SharePreferencesUtil.addString(LoginActivity.this, SportsKey.USER_NAME, username);
                         SharePreferencesUtil.addString(LoginActivity.this, SportsKey.PASSWORD, username);
-                        startActivity(new Intent(LoginActivity.this, MainActivity.class));
+
+                        getUserinfo(data.getData().getUid());
 
                     }
 
@@ -136,6 +132,24 @@ public class LoginActivity extends BaseActivity {
             case R.id.tv_shiwan:
                 break;
         }
+    }
+
+
+    public void getUserinfo(String uid) {
+
+        HttpRequest.getInstance().getUserinfo(LoginActivity.this, uid, new HttpCallback<getUserInfo>() {
+            @Override
+            public void onSuccess(getUserInfo data) {
+                UserHelper.getInstance().setCurrUser(data);
+                startActivity(new Intent(LoginActivity.this, MainActivity.class));
+            }
+
+            @Override
+            public void onFailure(String msgCode, String errorMsg) {
+                ShowDialogUtil.showFailDialog(LoginActivity.this, getString(R.string.loginerr), errorMsg);
+            }
+        });
+
     }
 
 

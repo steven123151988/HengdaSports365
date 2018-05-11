@@ -4,12 +4,13 @@ import android.content.Context;
 import android.support.v4.util.ArrayMap;
 
 
-import com.hengda.hengdasports.base.SportsAPI;
 import com.hengda.hengdasports.base.SportsKey;
-import com.hengda.hengdasports.json.LoginRsps;
+import com.hengda.hengdasports.json.HotgameRsp;
 import com.hengda.hengdasports.json.RegistRsp;
-import com.hengda.hengdasports.json.getUserInfo;
+import com.hengda.hengdasports.json.getPicVerificationCodeRsp;
+import com.hengda.hengdasports.json2.getUserInfo;
 import com.hengda.hengdasports.json2.HomeindexRsp;
+import com.hengda.hengdasports.json2.InsideMail;
 import com.hengda.hengdasports.json2.LoginRsp;
 import com.hengda.hengdasports.utils.JsonUtil;
 import com.hengda.hengdasports.utils.SharePreferencesUtil;
@@ -99,19 +100,6 @@ public class HttpRequest {
     }
 
 
-//    /**
-//     * 获取用户信息
-//     */
-//    public void getUserinfo(Object tag, String token, String action, HttpCallback<getUserInfo> callback) {
-//        RequestBody body = new RequestBodyBuilder()
-//                .addParam(SportsKey.TOKEN, token)
-//                .addParam("action", action)
-//                .build();
-//        Call<getUserInfo> call = mService.getUserInfo(body);
-//        putCall(tag, call);
-//        call.enqueue(callback);
-//    }
-
     /**
      * 登陆
      *
@@ -143,7 +131,6 @@ public class HttpRequest {
         putCall(tag, call);
         call.enqueue(callback);
     }
-
 
 
     /**
@@ -185,8 +172,6 @@ public class HttpRequest {
     }
 
 
-
-
     /**
      * 首页基本数据
      *
@@ -197,6 +182,62 @@ public class HttpRequest {
         RequestBody body = new RequestBodyBuilder()
                 .build();
         Call<HomeindexRsp> call = mService.homeIndex(body);
+        putCall(tag, call);
+        call.enqueue(callback);
+    }
+
+    /**
+     * 获取图片验证码
+     *
+     * @param tag
+     * @param callback
+     */
+    public void getPicVerificationCode(Object tag, HttpCallback<getPicVerificationCodeRsp> callback) {
+        RequestBody body = new RequestBodyBuilder()
+                .build();
+        Call<getPicVerificationCodeRsp> call = mService.getPicVerificationCode(body);
+        putCall(tag, call);
+        call.enqueue(callback);
+    }
+
+
+    /**
+     * 获取站内信
+     *
+     * @param tag
+     * @param callback
+     */
+    public void insideMail(Object tag, int page, HttpCallback<InsideMail> callback) {
+        RequestBody body = new RequestBodyBuilder()
+                .addParam("page", page)
+                .build();
+        Call<InsideMail> call = mService.insideMail(body);
+        putCall(tag, call);
+        call.enqueue(callback);
+    }
+
+
+    /**
+     * 获取用户信息
+     */
+    public void getUserinfo(Object tag, String uid, HttpCallback<getUserInfo> callback) {
+        RequestBody body = new RequestBodyBuilder()
+                .addParam("uid", uid)
+                .build();
+        Call<getUserInfo> call = mService.getUserInfo(body);
+        putCall(tag, call);
+        call.enqueue(callback);
+    }
+
+    /**
+     *   获取游戏数据
+     * @param tag
+     * @param callback
+     */
+    public void getGameData(Object tag, HttpCallback<HotgameRsp> callback) {
+        RequestBody body = new RequestBodyBuilder()
+                .build();
+        Call<HotgameRsp> call = mService.getGamedata(body);
         putCall(tag, call);
         call.enqueue(callback);
     }
@@ -283,19 +324,7 @@ public class HttpRequest {
 //    }
 //
 //
-//    /**
-//     * 获取图片验证码
-//     *
-//     * @param tag
-//     * @param callback
-//     */
-//    public void getPicVerificationCode(Object tag, HttpCallback<getPicVerificationCodeRsp> callback) {
-//        RequestBody body = new RequestBodyBuilder()
-//                .build();
-//        Call<getPicVerificationCodeRsp> call = mService.getPicVerificationCode(body);
-//        putCall(tag, call);
-//        call.enqueue(callback);
-//    }
+
 //
 //    /**
 //     * 绑定手机号

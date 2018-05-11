@@ -82,9 +82,16 @@
             android:name="com.hengda.hengdasports.activity.mine.SetActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
+        <activity
+            android:name="com.hengda.hengdasports.activity.mine.InsideMailActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.hengda.hengdasports.activity.bet.BetdetailAcivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
 
 
-        com.hengda.hengdasports.activity.mine
 
 
     </application>

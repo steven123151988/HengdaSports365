@@ -3,12 +3,147 @@
 
     <item
         is-multidex="true"
+        jar="/Users/steven/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/converter-gson/2.3.0/9e09011e9767bb76b5e27c9b8223476b93b14631/converter-gson-2.3.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="9e09011e9767bb76b5e27c9b8223476b93b14631">
+        <dex dex="/Users/steven/HengdaSports365/app/build/intermediates/transforms/dex/debug/folders/1000/10/converter-gson-2.3.0_720751b342b897a26b18aeaccd14e8f07151a280/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/steven/.android/build-cache/3e61babd3b36acaa6cf8e34028de67d58d6a1d01/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="e53517cd5071ca1e42548f05322ad87461098b58">
+        <dex dex="/Users/steven/HengdaSports365/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_815fa5d1f19640df32ec49bd293a3859de22c33a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/steven/.android/build-cache/3dbddd150f40f6bba2cfb1911ac429951b0a916c/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="6a2bcb61342d09fe9acf55c9daf63961c8866cc0">
+        <dex dex="/Users/steven/HengdaSports365/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_2b6435e2d77f1b0165c0ea56264506940e061f53/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/steven/.android/build-cache/5b6c3ae24abd5db7448ff29d987994baabab3a1b/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="57487745ce450899f9f250d5ae5c092a682cd041">
+        <dex dex="/Users/steven/HengdaSports365/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_5ced78c082ed4e7321d78d1cc6337bd591767700/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/steven/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.2/25ea2e8b0c338a877313bd4672d3fe056ea78f0d/jsr305-3.0.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="25ea2e8b0c338a877313bd4672d3fe056ea78f0d">
+        <dex dex="/Users/steven/HengdaSports365/app/build/intermediates/transforms/dex/debug/folders/1000/10/jsr305-3.0.2_c0d8e756a99b8c8bc3a5e056c495e97ed2a00fc6/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/steven/.android/build-cache/ecfcd93052ed80b6dc3e24e5cb7175a690c0f524/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="4119ea97a7191ff9b8f33b534ea220448f62f491">
+        <dex dex="/Users/steven/HengdaSports365/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_75753df82fc6ee11e57703bdae4e1c6ea78f53f6/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/steven/.android/build-cache/33fd70a61a83f9998babf5ffb9f75f764e31df1b/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="0c3529d9491be892952749d252ae1defa9b1f937">
+        <dex dex="/Users/steven/HengdaSports365/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_f7fa09fbd7ec14df733e4072773f382b308d9a9a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/Users/steven/HengdaSports365/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.3"
-        sha1="d2554d41dd3ad0327c1a054125ef959c7dbc8797">
+        sha1="b0f45ddadf792bd5019a69bc98f4612bee2dba7f">
         <dex dex="/Users/steven/HengdaSports365/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_48c6edb9361952322710049efe88263f0549d9a8/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/steven/.android/build-cache/a4720c210724b568f689b574fc3211c4e654ad02/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="4dfe2dd3f402072c5268f341830cdc5263187074">
+        <dex dex="/Users/steven/HengdaSports365/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_4c7dec65084c4e2e98670df8c2aa11b3220945ea/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/steven/.gradle/caches/modules-2/files-2.1/org.reactivestreams/reactive-streams/1.0.1/1b1c911686eb40179219466e6a59b634b9d7a748/reactive-streams-1.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="1b1c911686eb40179219466e6a59b634b9d7a748">
+        <dex dex="/Users/steven/HengdaSports365/app/build/intermediates/transforms/dex/debug/folders/1000/10/reactive-streams-1.0.1_2ccb1517e5fa03c416dedc57f5ec842c1b4f82b7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/steven/.gradle/caches/modules-2/files-2.1/com.nineoldandroids/library/2.4.0/e9b63380f3a242dbdbf103a2355ad7e43bad17cb/library-2.4.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
+        <dex dex="/Users/steven/HengdaSports365/app/build/intermediates/transforms/dex/debug/folders/1000/10/library-2.4.0_18d51514285c601030fc03f95f9fed97e2dfd692/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/steven/.gradle/caches/modules-2/files-2.1/io.reactivex.rxjava2/rxjava/2.1.5/1de589f16cd088be91ca6877cb836529276a6bb2/rxjava-2.1.5.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="1de589f16cd088be91ca6877cb836529276a6bb2">
+        <dex dex="/Users/steven/HengdaSports365/app/build/intermediates/transforms/dex/debug/folders/1000/10/rxjava-2.1.5_223906a75cf22fa62b6af1a742ef449ac718c1da/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/steven/.android/build-cache/82a21670ec65b3d3c4666f18ce3c177a06163a58/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="ac6948cce36f694f3eb3d73a135e298dc4b3527a">
+        <dex dex="/Users/steven/HengdaSports365/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_6a5e80a27709146dc78070496e9d6356c1fbaef7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/steven/.android/build-cache/df900aec99cab63e7626dea372b29c300f1d3367/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="aa2e151222d3480a0e38779e8d649d53361a0120">
+        <dex dex="/Users/steven/HengdaSports365/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_07e1bd7abdbc3db3dd74a935ec7912c7a689f4b1/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/steven/.android/build-cache/84014b2fe0f7a00449996cbbf56dd833d8ba7d18/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="ece5a71b715d2dc8bae86dc04ab02e32d998311f">
+        <dex dex="/Users/steven/HengdaSports365/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_7ce213e3e1d7afc3a4f7eab1e31cdcbf092e14b3/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/steven/.android/build-cache/718eee06db534ab9e096d154f5b43ef1dfadc343/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="f676a456b88ef95436122ee57e9b1acf5de6a817">
+        <dex dex="/Users/steven/HengdaSports365/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_9495338e355975332f07adf5f051e9c87435a16e/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -18,6 +153,114 @@
         revision="25.0.3"
         sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
         <dex dex="/Users/steven/HengdaSports365/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_796476f6866816c26d2c580d246366884082a0a9/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/steven/.gradle/caches/modules-2/files-2.1/io.objectbox/objectbox-java/1.4.4/805fdce32708b96f38501a3d52b6babeeb8011b0/objectbox-java-1.4.4.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="805fdce32708b96f38501a3d52b6babeeb8011b0">
+        <dex dex="/Users/steven/HengdaSports365/app/build/intermediates/transforms/dex/debug/folders/1000/10/objectbox-java-1.4.4_be8317d2ea5de726f0863a8847157fdbfa686a5e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/steven/.gradle/caches/modules-2/files-2.1/org.greenrobot/eventbus/3.1.1/5cd91fd014f5b72292f959748c20a2cefefae77d/eventbus-3.1.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="5cd91fd014f5b72292f959748c20a2cefefae77d">
+        <dex dex="/Users/steven/HengdaSports365/app/build/intermediates/transforms/dex/debug/folders/1000/10/eventbus-3.1.1_f842963e183757cd4301cd73f1ae77f50dda30ca/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Applications/Android Studio.app/Contents/gradle/m2repository/com/google/code/gson/gson/2.7/gson-2.7.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="751f548c85fa49f330cecbb1875893f971b33c4e">
+        <dex dex="/Users/steven/HengdaSports365/app/build/intermediates/transforms/dex/debug/folders/1000/10/gson-2.7_d1a1057c41bb15961a3ca738fc25831816ddce35/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/steven/.gradle/caches/modules-2/files-2.1/org.greenrobot/essentials/3.0.0-RC1/dfc6cd070e196e63df53c90abd2c3e1e02ee40e9/essentials-3.0.0-RC1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="dfc6cd070e196e63df53c90abd2c3e1e02ee40e9">
+        <dex dex="/Users/steven/HengdaSports365/app/build/intermediates/transforms/dex/debug/folders/1000/10/essentials-3.0.0-RC1_1e673586c1bb12b814cf8c5855f72eb4adae34fa/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/steven/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/retrofit/2.3.0/bcacde6a8ccedcc56c127403d26b76072fe6214d/retrofit-2.3.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="bcacde6a8ccedcc56c127403d26b76072fe6214d">
+        <dex dex="/Users/steven/HengdaSports365/app/build/intermediates/transforms/dex/debug/folders/1000/10/retrofit-2.3.0_eeb189020f65f20e3c45590af7b87ebeef0d0573/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/steven/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.10.0/7ef0f1d95bf4c0b3ba30bbae25e0e562b05cf75e/okhttp-3.10.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="7ef0f1d95bf4c0b3ba30bbae25e0e562b05cf75e">
+        <dex dex="/Users/steven/HengdaSports365/app/build/intermediates/transforms/dex/debug/folders/1000/10/okhttp-3.10.0_8e6abb0dbe499017e1a991279f2a97a6468be19f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/steven/.gradle/caches/modules-2/files-2.1/com.google.flatbuffers/flatbuffers-java/1.8.0/c0a904119659fd9cd667e6e37fbcb6bab790edf4/flatbuffers-java-1.8.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="c0a904119659fd9cd667e6e37fbcb6bab790edf4">
+        <dex dex="/Users/steven/HengdaSports365/app/build/intermediates/transforms/dex/debug/folders/1000/10/flatbuffers-java-1.8.0_dd5e9c1c31aa5cc98aa48cbfc916e4558e0c19ee/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/steven/.gradle/caches/modules-2/files-2.1/com.jakewharton/butterknife-annotations/8.8.1/bc373fb6bc7bca3035041b924f158fd2b946ee8d/butterknife-annotations-8.8.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="bc373fb6bc7bca3035041b924f158fd2b946ee8d">
+        <dex dex="/Users/steven/HengdaSports365/app/build/intermediates/transforms/dex/debug/folders/1000/10/butterknife-annotations-8.8.1_26efa18aa5c34cc011f2e0eebd563f554b985777/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/steven/.gradle/caches/modules-2/files-2.1/com.squareup.picasso/picasso/2.5.2/7446d06ec8d4f7ffcc53f1da37c95f200dcb9387/picasso-2.5.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="/Users/steven/HengdaSports365/app/build/intermediates/transforms/dex/debug/folders/1000/10/picasso-2.5.2_cbab3a05a72929557700b7f0ccb468a3cd09d547/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/steven/.gradle/caches/modules-2/files-2.1/io.objectbox/objectbox-java-api/1.4.4/b9e3a3a1fc436a8321bfc07d6a059dd56976f3a/objectbox-java-api-1.4.4.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="0b9e3a3a1fc436a8321bfc07d6a059dd56976f3a">
+        <dex dex="/Users/steven/HengdaSports365/app/build/intermediates/transforms/dex/debug/folders/1000/10/objectbox-java-api-1.4.4_f812d3defaa02e52bfe01b87b41b55c89b3017e0/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/steven/.gradle/caches/modules-2/files-2.1/com.umeng.analytics/analytics/6.1.4/c1d30c2bbdce435b775cadca57df2098044a0f5e/analytics-6.1.4.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="c1d30c2bbdce435b775cadca57df2098044a0f5e">
+        <dex dex="/Users/steven/HengdaSports365/app/build/intermediates/transforms/dex/debug/folders/1000/10/analytics-6.1.4_7ac71f053df5aeebf59c1ac458c53b4b04664faf/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/steven/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.14.0/102d7be47241d781ef95f1581d414b0943053130/okio-1.14.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="102d7be47241d781ef95f1581d414b0943053130">
+        <dex dex="/Users/steven/HengdaSports365/app/build/intermediates/transforms/dex/debug/folders/1000/10/okio-1.14.0_c5c1e24dc71bad42fa5be43e7533db5ab5a52585/classes.dex" />
     </item>
 
 </items>

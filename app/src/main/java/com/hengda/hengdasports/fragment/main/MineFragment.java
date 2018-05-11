@@ -15,10 +15,13 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.hengda.hengdasports.R;
+import com.hengda.hengdasports.activity.mine.InsideMailActivity;
 import com.hengda.hengdasports.activity.mine.RechargeActivity;
 import com.hengda.hengdasports.activity.mine.SetActivity;
 import com.hengda.hengdasports.activity.mine.WithdrawCashActivity;
 import com.hengda.hengdasports.base.BaseFragment;
+import com.hengda.hengdasports.json2.getUserInfo;
+import com.hengda.hengdasports.utils.UserHelper;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -82,7 +85,9 @@ public class MineFragment extends BaseFragment {
 
     @Override
     protected void initView() {
-
+        getUserInfo info= UserHelper.getInstance().getCurrUser();
+        tvName.setText(info.getData().getUserName());
+        tvBalance.setText(info.getData().getMoney());
     }
 
 
@@ -91,8 +96,10 @@ public class MineFragment extends BaseFragment {
 
     }
 
-    @OnClick({R.id.rl_withdrawcash, R.id.rl_recharge,R.id.tv_set, R.id.iv_refresh, R.id.ll_zhudanjilu, R.id.ll_zhanghumingxi, R.id.ll_chongzhijilu, R.id.ll_tixianjilu, R.id.ll_wanfaguize, R.id.ll_xiangxisheding, R.id.ll_guizetiaokuan, R.id.ll_service, R.id.ll_jiarudaili, R.id.ll_zhanneixin, R.id.ll_anquanzhongxin, R.id.ll_xinxigonggao})
+    @OnClick({R.id.rl_withdrawcash, R.id.rl_recharge, R.id.tv_set, R.id.iv_refresh, R.id.ll_zhudanjilu, R.id.ll_zhanghumingxi, R.id.ll_chongzhijilu, R.id.ll_tixianjilu, R.id.ll_wanfaguize, R.id.ll_xiangxisheding, R.id.ll_guizetiaokuan, R.id.ll_service, R.id.ll_jiarudaili, R.id.ll_zhanneixin, R.id.ll_anquanzhongxin, R.id.ll_xinxigonggao})
     public void onViewClicked(View view) {
+        if (null == getActivity())
+            return;
         switch (view.getId()) {
             case R.id.rl_withdrawcash:
                 startActivity(new Intent(getActivity(), WithdrawCashActivity.class));
@@ -137,6 +144,7 @@ public class MineFragment extends BaseFragment {
             case R.id.ll_jiarudaili:
                 break;
             case R.id.ll_zhanneixin:
+                startActivity(new Intent(getActivity(), InsideMailActivity.class));
                 break;
             case R.id.ll_anquanzhongxin:
                 break;
@@ -152,7 +160,6 @@ public class MineFragment extends BaseFragment {
     public void stopRotate() {
         ivRefresh.clearAnimation();
     }
-
 
 
 }

@@ -4,6 +4,8 @@ import android.content.Context;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 
+import com.hengda.hengdasports.base.ActivityManager;
+
 /**
  * 关闭弹起的键盘
  */

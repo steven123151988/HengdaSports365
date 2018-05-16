@@ -2,10 +2,12 @@ package com.hengda.hengdasports.base;
 
 import android.app.Activity;
 
+import com.hengda.hengdasports.utils.SharePreferencesUtil;
+
 import java.lang.ref.WeakReference;
 
 /**
- * Created by Steven on 2016/12/26.获取当前所在的activity
+ * Created by Steven on 2016/12/26.
  */
 public class ActivityManager {
     private static ActivityManager instance = new ActivityManager();
@@ -29,5 +31,6 @@ public class ActivityManager {
     public void setCurrentActivity(Activity activity) {
         mCurrentActivityWeakRef = new WeakReference<Activity>(activity);
     }
+
 
 }

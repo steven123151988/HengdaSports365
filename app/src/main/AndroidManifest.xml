@@ -91,7 +91,14 @@
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
 
-
+        <activity
+            android:name="com.hengda.hengdasports.activity.mine.PayinActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.hengda.hengdasports.activity.mine.TakeoutActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
 
 
     </application>

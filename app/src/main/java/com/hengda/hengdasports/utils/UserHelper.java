@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.content.Intent;
 
 import com.hengda.hengdasports.activity.login.LoginActivity;
+import com.hengda.hengdasports.base.ActivityManager;
 import com.hengda.hengdasports.base.SportsApplication;
 import com.hengda.hengdasports.json2.getUserInfo;
 

@@ -10,6 +10,8 @@ import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 
+import com.hengda.hengdasports.base.ActivityManager;
+
 /**
  * Created by Sunny18 on 2017/6/16.监听editext的size数量
  */

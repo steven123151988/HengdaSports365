@@ -5,7 +5,10 @@ import android.os.Bundle;
 import android.support.multidex.MultiDexApplication;
 
 import com.hengda.hengdasports.utils.LogUtil;
+import com.hengda.hengdasports.utils.SharePreferencesUtil;
 import com.umeng.analytics.MobclickAgent;
+
+import java.util.List;
 
 
 /**
@@ -13,6 +16,7 @@ import com.umeng.analytics.MobclickAgent;
  */
 public class SportsApplication extends MultiDexApplication {
     public static SportsApplication instance = null;
+
     public static SportsApplication getInstance() {
         return instance;
     }
@@ -87,6 +91,12 @@ public class SportsApplication extends MultiDexApplication {
             public void onActivityDestroyed(Activity activity) {
             }
         });
+    }
+
+
+
+    public static String getUid() {
+        return SharePreferencesUtil.getString(ActivityManager.getInstance().getCurrentActivity(),SportsKey.UID,"");
     }
 
 

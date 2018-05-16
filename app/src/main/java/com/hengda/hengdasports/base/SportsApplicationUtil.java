@@ -2,6 +2,7 @@ package com.hengda.hengdasports.base;
 
 import android.content.Context;
 
+import com.hengda.hengdasports.utils.SharePreferencesUtil;
 import com.umeng.analytics.MobclickAgent;
 
 public class SportsApplicationUtil {
@@ -15,4 +16,7 @@ public class SportsApplicationUtil {
         android.os.Process.killProcess(android.os.Process.myPid());
         System.exit(0);
     }
+
+
+
 }

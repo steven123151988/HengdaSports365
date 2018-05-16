@@ -115,8 +115,10 @@ public class LoginActivity extends BaseActivity {
                         SharePreferencesUtil.addString(LoginActivity.this, SportsKey.UID, data.getData().getUid());
                         SharePreferencesUtil.addString(LoginActivity.this, SportsKey.USER_NAME, username);
                         SharePreferencesUtil.addString(LoginActivity.this, SportsKey.PASSWORD, username);
+                        startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                        finish();
 
-                        getUserinfo(data.getData().getUid());
+//                        UserHelper.getInstance().setCurrUser(data);
 
                     }
 
@@ -132,24 +134,6 @@ public class LoginActivity extends BaseActivity {
             case R.id.tv_shiwan:
                 break;
         }
-    }
-
-
-    public void getUserinfo(String uid) {
-
-        HttpRequest.getInstance().getUserinfo(LoginActivity.this, uid, new HttpCallback<getUserInfo>() {
-            @Override
-            public void onSuccess(getUserInfo data) {
-                UserHelper.getInstance().setCurrUser(data);
-                startActivity(new Intent(LoginActivity.this, MainActivity.class));
-            }
-
-            @Override
-            public void onFailure(String msgCode, String errorMsg) {
-                ShowDialogUtil.showFailDialog(LoginActivity.this, getString(R.string.loginerr), errorMsg);
-            }
-        });
-
     }
 
 

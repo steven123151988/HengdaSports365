@@ -2,10 +2,10 @@ package com.hengda.hengdasports.base;
 
 
 public class SportsAPI {
-    public static String BASE_URL = "http://192.168.254.108/index.php/";
+    public static String BASE_URL = "http://118.184.29.2:8081/";
+
+
     public static final String LOGIN = "login";//登陆
-
-
     public static final String REGIST = "/member/register/check_reg";//注册
     public static final String CHECK_USER = "/member/register/chk_user";//检查用户名称
     public static final String LOGIN_OUT = "/login/loginout";//登出
@@ -31,7 +31,7 @@ public class SportsAPI {
     public static String HELP = "http://hg0909.com/index.php/Help";
     public static String COMPANY_INCOME_H5 = "http://hg0909.com/index.php/Bank/listPay";//公司入款说明
     public static String SERVICE_URL = "https://chat.livechatvalue.com/chat/chatClient/chatbox.jsp?companyID=588188&configID=49151&jid=8032204814&s=1";
-
+    public final  String INDEX = "/home/main_menu"; //主页菜单数据
     /**
      * 根据错误码找到提示信息
      *

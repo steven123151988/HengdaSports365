@@ -26,8 +26,6 @@ import butterknife.BindView;
 import butterknife.OnClick;
 
 public class MainActivity extends BaseActivity {
-
-
     @BindView(R.id.view_fragment)
     FrameLayout viewFragment;
     @BindView(R.id.iv_home)
@@ -63,7 +61,6 @@ public class MainActivity extends BaseActivity {
     private BetRecordsFragment betRecordsFragment;
     private MybetsFragment mybetsFragment;
     private MineFragment mineFragment;
-
 
     @Override
     protected int getLayoutId() {

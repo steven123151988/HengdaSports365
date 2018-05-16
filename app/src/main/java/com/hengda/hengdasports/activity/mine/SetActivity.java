@@ -18,6 +18,7 @@ import com.hengda.hengdasports.base.SportsKey;
 import com.hengda.hengdasports.json2.LoginRsp;
 import com.hengda.hengdasports.utils.SharePreferencesUtil;
 import com.hengda.hengdasports.utils.ShowDialogUtil;
+import com.hengda.hengdasports.utils.SystemUtil;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -43,7 +44,7 @@ public class SetActivity extends BaseActivity {
 
     @Override
     protected void initData() {
-
+        SystemUtil.setfullScreen(SetActivity.this);
     }
 
     @Override
@@ -59,13 +60,11 @@ public class SetActivity extends BaseActivity {
                 finish();
                 break;
             case R.id.bt_loginout:
-                String uid = SharePreferencesUtil.getString(SetActivity.this, SportsKey.UID, "0");
-                HttpRequest.getInstance().loginOut(SetActivity.this, uid, new HttpCallback<LoginRsp>() {
+                HttpRequest.getInstance().loginOut(SetActivity.this, new HttpCallback<LoginRsp>() {
                     @Override
                     public void onSuccess(LoginRsp data) {
                         SharePreferencesUtil.addString(SetActivity.this, SportsKey.UID, "0");
                         startActivity(new Intent(SetActivity.this, MainActivity.class));
-
                     }
 
                     @Override

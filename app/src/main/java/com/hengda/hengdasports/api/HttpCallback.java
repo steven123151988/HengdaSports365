@@ -5,9 +5,9 @@ import android.support.annotation.NonNull;
 
 import com.google.gson.JsonParseException;
 import com.hengda.hengdasports.activity.login.LoginActivity;
+import com.hengda.hengdasports.base.ActivityManager;
 import com.hengda.hengdasports.base.SportsAPI;
 import com.hengda.hengdasports.json2.BaseModel;
-import com.hengda.hengdasports.utils.ActivityManager;
 
 import org.json.JSONException;
 
@@ -42,9 +42,8 @@ public abstract class HttpCallback<T extends BaseModel> implements Callback<T> {
             if (model.getCode() == 0) {
                 onSuccess(model);
             } else {
-                if (model.getCode() == -100) {
-                    ActivityManager.getInstance().getCurrentActivity().
-                            startActivity(new Intent(ActivityManager.getInstance().getCurrentActivity(), LoginActivity.class));
+                if (model.getCode() == 9) {
+                    ActivityManager.getInstance().getCurrentActivity().startActivity(new Intent(ActivityManager.getInstance().getCurrentActivity(), LoginActivity.class));
                 } else {
                     onApiFailure(model);
                 }

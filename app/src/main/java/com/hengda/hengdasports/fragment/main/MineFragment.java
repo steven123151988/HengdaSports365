@@ -16,8 +16,10 @@ import android.widget.TextView;
 
 import com.hengda.hengdasports.R;
 import com.hengda.hengdasports.activity.mine.InsideMailActivity;
+import com.hengda.hengdasports.activity.mine.PayinActivity;
 import com.hengda.hengdasports.activity.mine.RechargeActivity;
 import com.hengda.hengdasports.activity.mine.SetActivity;
+import com.hengda.hengdasports.activity.mine.TakeoutActivity;
 import com.hengda.hengdasports.activity.mine.WithdrawCashActivity;
 import com.hengda.hengdasports.base.BaseFragment;
 import com.hengda.hengdasports.json2.getUserInfo;
@@ -130,8 +132,10 @@ public class MineFragment extends BaseFragment {
             case R.id.ll_zhanghumingxi:
                 break;
             case R.id.ll_chongzhijilu:
+                startActivity(new Intent(getActivity(), PayinActivity.class));
                 break;
             case R.id.ll_tixianjilu:
+                startActivity(new Intent(getActivity(), TakeoutActivity.class));
                 break;
             case R.id.ll_wanfaguize:
                 break;

@@ -8,6 +8,8 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
+import com.hengda.hengdasports.utils.SharePreferencesUtil;
+
 import org.greenrobot.eventbus.EventBus;
 
 import butterknife.ButterKnife;
@@ -117,7 +119,11 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
     protected abstract int getLayoutId();
+    protected abstract void initView(@Nullable Bundle savedInstanceState);
     protected abstract void initData();
 
-    protected abstract void initView(@Nullable Bundle savedInstanceState);
+
+
+
+
 }

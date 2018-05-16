@@ -8,10 +8,14 @@
 
 
     <Button
+        android:layout_marginRight="@dimen/dimen_30"
+        android:layout_marginLeft="@dimen/dimen_30"
         android:id="@+id/bt_loginout"
-        android:textColor="@color/white_ffffff"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="退出 " />
+        android:layout_marginTop="@dimen/dimen_30"
+        android:background="@color/color_primary"
+        android:text="退出 "
+        android:textColor="@color/white_ffffff" />
 
 </LinearLayout>

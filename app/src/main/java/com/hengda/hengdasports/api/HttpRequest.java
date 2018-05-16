@@ -4,10 +4,15 @@ import android.content.Context;
 import android.support.v4.util.ArrayMap;
 
 
+import com.hengda.hengdasports.base.ActivityManager;
+import com.hengda.hengdasports.base.BaseActivity;
+import com.hengda.hengdasports.base.SportsAPI;
+import com.hengda.hengdasports.base.SportsApplication;
 import com.hengda.hengdasports.base.SportsKey;
 import com.hengda.hengdasports.json.HotgameRsp;
 import com.hengda.hengdasports.json.RegistRsp;
 import com.hengda.hengdasports.json.getPicVerificationCodeRsp;
+import com.hengda.hengdasports.json2.BetMenuList;
 import com.hengda.hengdasports.json2.getUserInfo;
 import com.hengda.hengdasports.json2.HomeindexRsp;
 import com.hengda.hengdasports.json2.InsideMail;
@@ -120,12 +125,11 @@ public class HttpRequest {
      * 登出
      *
      * @param tag
-     * @param uid
      * @param callback
      */
-    public void loginOut(Object tag, String uid, HttpCallback<LoginRsp> callback) {
+    public void loginOut(Object tag,  HttpCallback<LoginRsp> callback) {
         RequestBody body = new RequestBodyBuilder()
-                .addParam("uid", uid)
+                .addParam("uid",SportsApplication.getUid())
                 .build();
         Call<LoginRsp> call = mService.loginOut(body);
         putCall(tag, call);
@@ -210,6 +214,7 @@ public class HttpRequest {
     public void insideMail(Object tag, int page, HttpCallback<InsideMail> callback) {
         RequestBody body = new RequestBodyBuilder()
                 .addParam("page", page)
+                .addParam("uid", SportsApplication.getUid())
                 .build();
         Call<InsideMail> call = mService.insideMail(body);
         putCall(tag, call);
@@ -218,26 +223,70 @@ public class HttpRequest {
 
 
     /**
-     * 获取用户信息
+     * 获取游戏数据
      */
-    public void getUserinfo(Object tag, String uid, HttpCallback<getUserInfo> callback) {
+    public void getGameData(Object tag, String ball, String type, String game, HttpCallback<HotgameRsp> callback) {
         RequestBody body = new RequestBodyBuilder()
-                .addParam("uid", uid)
+                .addParam("ball", ball)
+                .addParam("type", type)
+                .addParam("game", game)
+                .addParam("uid", SportsApplication.getUid())
                 .build();
-        Call<getUserInfo> call = mService.getUserInfo(body);
+        Call<HotgameRsp> call = mService.getGamedata( body);
+        putCall(tag, call);
+        call.enqueue(callback);
+    }
+
+
+    /**
+     * 获取球类玩法菜单数据
+     *
+     * @param tag
+     * @param ball
+     * @param callback
+     */
+    public void getBetMenuList(Object tag, String ball, HttpCallback<BetMenuList> callback) {
+        RequestBody body = new RequestBodyBuilder()
+                .addParam("ball", ball)
+                .addParam("uid", SportsApplication.getUid())
+                .build();
+        Call<BetMenuList> call = mService.getBetMenuList(body);
         putCall(tag, call);
         call.enqueue(callback);
     }
 
     /**
-     *   获取游戏数据
+     * 体育注单接口
+     *
      * @param tag
+     * @param page
      * @param callback
      */
-    public void getGameData(Object tag, HttpCallback<HotgameRsp> callback) {
+    public void bet_betting(Object tag, int page, HttpCallback<LoginRsp> callback) {
         RequestBody body = new RequestBodyBuilder()
+                .addParam("page", page)
+                .addParam("uid", SportsApplication.getUid())
                 .build();
-        Call<HotgameRsp> call = mService.getGamedata(body);
+        Call<LoginRsp> call = mService.bet_betting(body);
+        putCall(tag, call);
+        call.enqueue(callback);
+    }
+
+    /**
+     * 充值和取款接口
+     *
+     * @param tag
+     * @param cpage
+     * @param type
+     * @param callback
+     */
+    public void payin_takeout(Object tag, int cpage, String type, HttpCallback<LoginRsp> callback) {
+        RequestBody body = new RequestBodyBuilder()
+                .addParam("cpage", cpage)
+                .addParam("uid", SportsApplication.getUid())
+                .addParam("type", type)
+                .build();
+        Call<LoginRsp> call = mService.getMoney_in_out(body);
         putCall(tag, call);
         call.enqueue(callback);
     }

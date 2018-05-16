@@ -4,7 +4,7 @@ import com.hengda.hengdasports.json.BindphoneRsp;
 import com.hengda.hengdasports.json.HotgameRsp;
 import com.hengda.hengdasports.json.RegistRsp;
 import com.hengda.hengdasports.json.getPicVerificationCodeRsp;
-import com.hengda.hengdasports.json2.getUserInfo;
+import com.hengda.hengdasports.json2.BetMenuList;
 import com.hengda.hengdasports.json2.HomeindexRsp;
 import com.hengda.hengdasports.json2.InsideMail;
 import com.hengda.hengdasports.json2.LoginRsp;
@@ -12,7 +12,9 @@ import com.hengda.hengdasports.json2.LoginRsp;
 import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Url;
 
 public interface ApiService {
     /**
@@ -62,21 +64,41 @@ public interface ApiService {
     /**
      * 站内信
      */
-    @POST("/member/mesg/inbox?uid=ebdf43e5a0236621347era6")
+    @POST("/member/mesg/inbox")
     Call<InsideMail> insideMail(@Body RequestBody body);
 
     /**
-     * 获取当前用户详情
+     * 获取盘口数据
      */
-    @POST("/member/member/account")
-    Call<getUserInfo> getUserInfo(@Body RequestBody body);
+    @POST("/home/get_match")
+    Call<HotgameRsp> getGamedata( @Body RequestBody body);
+
+    /**
+     * 赛首菜单的数据
+     */
+    @POST("/home/main_menu")
+    Call<BetMenuList> getBetMenuList(@Body RequestBody body);
 
 
     /**
-     * 获取盘后数据
+     * 获取注单记录
      */
-    @POST("home/get_match?uid=ebdf43e5a0236621347era6")
-    Call<HotgameRsp> getGamedata(@Body RequestBody body);
+    @POST("/member/member/bet_beting")
+    Call<LoginRsp> bet_betting( @Body RequestBody body);
+
+    /**
+     * 获取充值提现记录
+     */
+    @POST("/member/member/mem_capital_flow")
+    Call<LoginRsp> getMoney_in_out( @Body RequestBody body);
+
+
+
+
+
+
+
+
 
 
 //

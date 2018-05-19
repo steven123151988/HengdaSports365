@@ -11,6 +11,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.hengda.hengdasports.R;
+import com.hengda.hengdasports.view.dialog.SimpleProgressDialog;
+
 import org.greenrobot.eventbus.EventBus;
 
 import butterknife.ButterKnife;
@@ -34,7 +37,7 @@ public abstract class BaseFragment extends Fragment {
     /**
      * 加载框
      */
-//    private SimpleProgressDialog mProgressDialog;
+    private SimpleProgressDialog mProgressDialog;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(getLayoutId(), container, false);
@@ -57,28 +60,28 @@ public abstract class BaseFragment extends Fragment {
         if (mActivity == null) {
             return;
         }
-//        mActivity.runOnUiThread(new Runnable() {
-//            @Override
-//            public void run() {
-//                if (mProgressDialog == null) {
-//                    mProgressDialog = new SimpleProgressDialog(mActivity, getString(R.string.loading));
-//                }
-//                if (!mProgressDialog.isShowing() && !mActivity.isFinishing()) {
-//                    mProgressDialog.show();
-//                }
-//            }
-//        });
+        mActivity.runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                if (mProgressDialog == null) {
+                    mProgressDialog = new SimpleProgressDialog(mActivity, "loading...");
+                }
+                if (!mProgressDialog.isShowing() && !mActivity.isFinishing()) {
+                    mProgressDialog.show();
+                }
+            }
+        });
     }
 
     public void dismissLoadingDialog() {
-//        mActivity.runOnUiThread(new Runnable() {
-//            @Override
-//            public void run() {
-//                if (mProgressDialog != null && mProgressDialog.isShowing()) {
-//                    mProgressDialog.dismiss();
-//                }
-//            }
-//        });
+        mActivity.runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                if (mProgressDialog != null && mProgressDialog.isShowing()) {
+                    mProgressDialog.dismiss();
+                }
+            }
+        });
     }
 
     public void openActivity(@NonNull Class<? extends Activity> clazz, boolean finish) {

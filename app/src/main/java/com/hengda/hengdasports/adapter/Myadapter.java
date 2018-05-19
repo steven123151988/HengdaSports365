@@ -14,17 +14,20 @@ import java.util.List;
  * steven
  */
 public class Myadapter extends FragmentPagerAdapter {
-
     private List<String> list;
+    private String ball,type,game;
 
-    public Myadapter(FragmentManager fm, List<String> list) {
+    public Myadapter(FragmentManager fm, List<String> list,String ball,String type,String game) {
         super(fm);
         this.list = list;
+        this.ball=ball;
+        this.type=type;
+        this.game=game;
     }
 
     @Override
     public Fragment getItem(int position) {
-        return BillFragment.newInstance(list.get(position));
+        return BillFragment.newInstance(list.get(position),ball,type,game);
     }
 
     @Override

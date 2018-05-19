@@ -6,39 +6,22 @@ package com.hengda.hengdasports.json2;
 
 public class PopupMenuBean {
 
-    private int code;
-    private String name;
+  private String type;
+  private String alias;
 
-    public int getCode() {
-        return code;
+    public String getType() {
+        return type;
     }
 
-    public void setCode(int code) {
-        this.code = code;
+    public void setType(String type) {
+        this.type = type;
     }
 
-    public String getName() {
-        return name;
+    public String getAlias() {
+        return alias;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public PopupMenuBean() {
-        super();
-    }
-
-    public PopupMenuBean(int code, String name) {
-        this.code = code;
-        this.name = name;
-    }
-
-    @Override
-    public String toString() {
-        return "PopupMenuBean{" +
-                "code=" + code +
-                ", name='" + name + '\'' +
-                '}';
+    public void setAlias(String alias) {
+        this.alias = alias;
     }
 }

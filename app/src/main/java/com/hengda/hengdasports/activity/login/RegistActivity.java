@@ -22,6 +22,7 @@ import com.hengda.hengdasports.base.SportsKey;
 import com.hengda.hengdasports.json.RegistRsp;
 import com.hengda.hengdasports.json.getPicVerificationCodeRsp;
 import com.hengda.hengdasports.json2.LoginRsp;
+import com.hengda.hengdasports.json2.getUserInfo;
 import com.hengda.hengdasports.utils.KeyBoardUtils;
 import com.hengda.hengdasports.utils.LogUtil;
 import com.hengda.hengdasports.utils.SharePreferencesUtil;
@@ -167,9 +168,9 @@ public class RegistActivity extends BaseActivity {
                     @Override
                     public void run() {
                         ShowDialogUtil.dismissDialogs();
-                        HttpRequest.getInstance().login(RegistActivity.this, username, password, new HttpCallback<LoginRsp>() {
+                        HttpRequest.getInstance().login(RegistActivity.this, username, password, new HttpCallback<getUserInfo>() {
                             @Override
-                            public void onSuccess(LoginRsp data) {
+                            public void onSuccess(getUserInfo data) {
                                 SharePreferencesUtil.addString(RegistActivity.this, SportsKey.UID, data.getData().getUid());
                                 SharePreferencesUtil.addString(RegistActivity.this, SportsKey.USER_NAME, username);
                                 SharePreferencesUtil.addString(RegistActivity.this, SportsKey.PASSWORD, username);

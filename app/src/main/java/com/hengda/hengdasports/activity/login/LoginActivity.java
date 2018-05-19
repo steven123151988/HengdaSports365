@@ -109,16 +109,17 @@ public class LoginActivity extends BaseActivity {
                     return;
                 }
 
-                HttpRequest.getInstance().login(LoginActivity.this, username, psw, new HttpCallback<LoginRsp>() {
+                HttpRequest.getInstance().login(LoginActivity.this, username, psw, new HttpCallback<getUserInfo>() {
                     @Override
-                    public void onSuccess(LoginRsp data) {
+                    public void onSuccess(getUserInfo data) {
+                        UserHelper.getInstance().setCurrUser(data);
                         SharePreferencesUtil.addString(LoginActivity.this, SportsKey.UID, data.getData().getUid());
                         SharePreferencesUtil.addString(LoginActivity.this, SportsKey.USER_NAME, username);
                         SharePreferencesUtil.addString(LoginActivity.this, SportsKey.PASSWORD, username);
                         startActivity(new Intent(LoginActivity.this, MainActivity.class));
                         finish();
 
-//                        UserHelper.getInstance().setCurrUser(data);
+
 
                     }
 

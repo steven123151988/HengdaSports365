@@ -1,7 +1,5 @@
 package com.hengda.hengdasports.json2;
 
-import com.hengda.hengdasports.json2.BaseModel;
-
 /**
  * Description:获取当前用户详情
  * Data：2018/4/14-17:40
@@ -11,7 +9,7 @@ public class getUserInfo extends BaseModel {
 
 
     /**
-     * data : {"ID":"153017","UserName":"qqq111","Alias":"","ptopen":"0","md5psw":"5abd06d6f6ef0e022e11b8a41f57ebda","Money":"0"}
+     * data : {"ID":"153017","uid":"4d155363dc5abd06d6f6ra8","UserName":"qqq111","LoginName":"qqq111","Language":"zh-cn","Alias":"","LoginDate":"2018-05-19","LoginTime":"2018-05-19 04:52:30","OnlineTime":"2018-05-19 04:52:30","LoginIP":"110.54.250.139","Url":"http://118.184.29.2/"}
      */
 
     private DataBean data;
@@ -27,19 +25,29 @@ public class getUserInfo extends BaseModel {
     public static class DataBean {
         /**
          * ID : 153017
+         * uid : 4d155363dc5abd06d6f6ra8
          * UserName : qqq111
+         * LoginName : qqq111
+         * Language : zh-cn
          * Alias :
-         * ptopen : 0
-         * md5psw : 5abd06d6f6ef0e022e11b8a41f57ebda
-         * Money : 0
+         * LoginDate : 2018-05-19
+         * LoginTime : 2018-05-19 04:52:30
+         * OnlineTime : 2018-05-19 04:52:30
+         * LoginIP : 110.54.250.139
+         * Url : http://118.184.29.2/
          */
 
         private String ID;
+        private String uid;
         private String UserName;
+        private String LoginName;
+        private String Language;
         private String Alias;
-        private String ptopen;
-        private String md5psw;
-        private String Money;
+        private String LoginDate;
+        private String LoginTime;
+        private String OnlineTime;
+        private String LoginIP;
+        private String Url;
 
         public String getID() {
             return ID;
@@ -47,6 +55,14 @@ public class getUserInfo extends BaseModel {
 
         public void setID(String ID) {
             this.ID = ID;
+        }
+
+        public String getUid() {
+            return uid;
+        }
+
+        public void setUid(String uid) {
+            this.uid = uid;
         }
 
         public String getUserName() {
@@ -57,6 +73,22 @@ public class getUserInfo extends BaseModel {
             this.UserName = UserName;
         }
 
+        public String getLoginName() {
+            return LoginName;
+        }
+
+        public void setLoginName(String LoginName) {
+            this.LoginName = LoginName;
+        }
+
+        public String getLanguage() {
+            return Language;
+        }
+
+        public void setLanguage(String Language) {
+            this.Language = Language;
+        }
+
         public String getAlias() {
             return Alias;
         }
@@ -65,28 +97,44 @@ public class getUserInfo extends BaseModel {
             this.Alias = Alias;
         }
 
-        public String getPtopen() {
-            return ptopen;
+        public String getLoginDate() {
+            return LoginDate;
         }
 
-        public void setPtopen(String ptopen) {
-            this.ptopen = ptopen;
+        public void setLoginDate(String LoginDate) {
+            this.LoginDate = LoginDate;
         }
 
-        public String getMd5psw() {
-            return md5psw;
+        public String getLoginTime() {
+            return LoginTime;
         }
 
-        public void setMd5psw(String md5psw) {
-            this.md5psw = md5psw;
+        public void setLoginTime(String LoginTime) {
+            this.LoginTime = LoginTime;
         }
 
-        public String getMoney() {
-            return Money;
+        public String getOnlineTime() {
+            return OnlineTime;
         }
 
-        public void setMoney(String Money) {
-            this.Money = Money;
+        public void setOnlineTime(String OnlineTime) {
+            this.OnlineTime = OnlineTime;
+        }
+
+        public String getLoginIP() {
+            return LoginIP;
+        }
+
+        public void setLoginIP(String LoginIP) {
+            this.LoginIP = LoginIP;
+        }
+
+        public String getUrl() {
+            return Url;
+        }
+
+        public void setUrl(String Url) {
+            this.Url = Url;
         }
     }
 }

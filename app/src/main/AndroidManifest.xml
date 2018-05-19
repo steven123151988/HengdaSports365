@@ -99,6 +99,22 @@
             android:name="com.hengda.hengdasports.activity.mine.TakeoutActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
+        <activity
+            android:name="com.hengda.hengdasports.activity.mine.safecenter.BankcardActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.hengda.hengdasports.activity.mine.SafecenterActivitty"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.hengda.hengdasports.activity.mine.safecenter.ChangeMoneypswActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.hengda.hengdasports.activity.mine.safecenter.ChangeLoginPswActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
 
 
     </application>

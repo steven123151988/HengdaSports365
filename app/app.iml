@@ -129,6 +129,7 @@
     <orderEntry type="library" name="Gradle: com.android.support:support-compat-25.4.0" level="project" />
     <orderEntry type="library" name="Gradle: io.objectbox:objectbox-android-1.4.4" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:multidex-1.0.3" level="project" />
+    <orderEntry type="library" name="Gradle: com.github.CymChad:BaseRecyclerViewAdapterHelper-2.9.34" level="project" />
     <orderEntry type="library" name="Gradle: com.squareup.retrofit2:converter-gson:2.3.0@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:transition-25.4.0" level="project" />
     <orderEntry type="library" name="Gradle: com.dhh:websocket2-1.5.0" level="project" />

@@ -26,6 +26,7 @@ public class PayinActivity  extends BaseActivity {
     protected void initView(@Nullable Bundle savedInstanceState) {
         SystemUtil.setfullScreen(PayinActivity.this);
 
+
     }
 
     @Override

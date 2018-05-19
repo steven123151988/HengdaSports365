@@ -73,8 +73,8 @@ public class FirstFragment extends BaseFragment {
     Unbinder unbinder;
     private BaseBannerBean baseBannerBean;
     private Intent intent;
-    private int footballnum=0;
-    private int basketballnum=0;
+    private int footballnum = 0;
+    private int basketballnum = 0;
 
     @Override
     protected int getLayoutId() {
@@ -94,9 +94,9 @@ public class FirstFragment extends BaseFragment {
 
             @Override
             public void onSuccess(HomeindexRsp data) {
-                footballnum=data.getData().getFt_nums();
-                basketballnum=data.getData().getBk_nums();
-
+                footballnum = data.getData().getFt_nums();
+                basketballnum = data.getData().getBk_nums();
+                //开启跑马灯
                 marquee.setText(data.getData().getNotice());
                 marquee.start();
 
@@ -108,16 +108,13 @@ public class FirstFragment extends BaseFragment {
                     list.add(baseBannerBean);
                 }
 
-
                 if (null != getActivity()) {
                     BannerBaseView banner = new MainBannerView(getActivity());
                     bannerCont.addView(banner);
                     banner.update(list);
                     imgDefault.setVisibility(View.GONE);
                     bannerCont.setVisibility(View.VISIBLE);
-
                 }
-
             }
 
             @Override
@@ -154,8 +151,8 @@ public class FirstFragment extends BaseFragment {
         builder2.setSpan(new ForegroundColorSpan(Color.parseColor("#ff0000")), beforeText.length(), beforeText.length() + afterText2.length(), Spannable.SPAN_EXCLUSIVE_INCLUSIVE); //设置后面的字体颜色
         builder2.setSpan(new AbsoluteSizeSpan(afterSize, true), beforeText.length(), lasttext.length(), Spannable.SPAN_INCLUSIVE_EXCLUSIVE);//设置后面的字体大小
         builder2.append(lasttext);
-        builder2.setSpan(new ForegroundColorSpan(Color.parseColor("#000000")), beforeText.length() + afterText2.length(), builder.length(), Spannable.SPAN_EXCLUSIVE_INCLUSIVE); //设置后面的字体颜色
-        builder2.setSpan(new AbsoluteSizeSpan(afterSize, true), lasttext.length(), builder.length(), Spannable.SPAN_INCLUSIVE_EXCLUSIVE);//设置后面的字体大小
+        builder2.setSpan(new ForegroundColorSpan(Color.parseColor("#000000")), beforeText.length() + afterText2.length(), builder2.length(), Spannable.SPAN_EXCLUSIVE_INCLUSIVE); //设置后面的字体颜色
+        builder2.setSpan(new AbsoluteSizeSpan(afterSize, true), lasttext.length(), builder2.length(), Spannable.SPAN_INCLUSIVE_EXCLUSIVE);//设置后面的字体大小
         tvBasketball.setText(builder2);
 
     }
@@ -180,14 +177,14 @@ public class FirstFragment extends BaseFragment {
             case R.id.ll_kefu:
                 break;
             case R.id.ll_football:
-                if (footballnum!=0){
+//                if (footballnum != 0) {
                     intent = new Intent(getActivity(), BetdetailAcivity.class);
                     intent.putExtra("ball", "FT");
                     startActivity(intent);
-                }
+//                }
                 break;
             case R.id.ll_basketball:
-                if (basketballnum!=0){
+                if (basketballnum != 0) {
                     intent = new Intent(getActivity(), BetdetailAcivity.class);
                     intent.putExtra("ball", "BK");
                     startActivity(intent);
@@ -200,17 +197,5 @@ public class FirstFragment extends BaseFragment {
         }
     }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        // TODO: inflate a fragment view
-        View rootView = super.onCreateView(inflater, container, savedInstanceState);
-        unbinder = ButterKnife.bind(this, rootView);
-        return rootView;
-    }
 
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        unbinder.unbind();
-    }
 }

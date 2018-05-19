@@ -9,7 +9,9 @@ import android.widget.GridView;
 
 import com.hengda.hengdasports.R;
 import com.hengda.hengdasports.adapter.PopupMenuAdapter;
+import com.hengda.hengdasports.json2.BetMenuList;
 import com.hengda.hengdasports.json2.PopupMenuBean;
+import com.hengda.hengdasports.utils.SportUtil;
 import com.hengda.hengdasports.view.dialog.easypopup.BaseCustomPopup;
 
 import java.util.ArrayList;
@@ -23,10 +25,12 @@ public class SwitchGamePopupWindow extends BaseCustomPopup {
     private OnItemClickListener onItemClickListener;
     private GridView gv_popup;
     private List<PopupMenuBean> list;
+    private BetMenuList betMenuList;
 
-    public SwitchGamePopupWindow(Context context) {
+    public SwitchGamePopupWindow(Context context,BetMenuList betMenuList) {
         super(context);
         this.context = context;
+        this.betMenuList=betMenuList;
 
     }
 
@@ -47,28 +51,28 @@ public class SwitchGamePopupWindow extends BaseCustomPopup {
     protected void initViews(View view) {
         gv_popup = (GridView) view.findViewById(R.id.gv_popup);
         list = new ArrayList<>();
-//        Map<Integer, String> otherGames = LotteryUtil.get().getAllOtherGames(gameCode);
-//        Set<Map.Entry<Integer, String>> entries = otherGames.entrySet();
-//        for (Map.Entry<Integer, String> entry : entries) {
-//            PopupMenuBean Pmb = new PopupMenuBean();
-//            Pmb.setCode(entry.getKey());
-//            Pmb.setName(entry.getValue());
-//            list.add(Pmb);
-//        }
-//        PopupMenuAdapter adapter = new PopupMenuAdapter(context,list);
-//        gv_popup.setAdapter(adapter);
-//        gv_popup.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                if (onItemClickListener != null) {
-//                    onItemClickListener.onItemClick(list.get(position).getCode());
-//                }
-//                dismiss();
-//            }
-//        });
+        Map<String, String> otherGames = SportUtil.geAlltype(betMenuList);
+        Set<Map.Entry<String, String>> entries = otherGames.entrySet();
+        for (Map.Entry<String, String> entry : entries) {
+            PopupMenuBean Pmb = new PopupMenuBean();
+            Pmb.setType(entry.getKey());
+            Pmb.setAlias(entry.getValue());
+            list.add(Pmb);
+        }
+        PopupMenuAdapter adapter = new PopupMenuAdapter(context,list);
+        gv_popup.setAdapter(adapter);
+        gv_popup.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if (onItemClickListener != null) {
+                    onItemClickListener.onItemClick(position,list.get(position).getType(),list.get(position).getAlias());
+                }
+                dismiss();
+            }
+        });
     }
 
     public interface OnItemClickListener {
-        void onItemClick(int gameCode);
+        void onItemClick(int position,String type,String alias);
     }
 }

@@ -8,6 +8,7 @@ import com.hengda.hengdasports.json2.BetMenuList;
 import com.hengda.hengdasports.json2.HomeindexRsp;
 import com.hengda.hengdasports.json2.InsideMail;
 import com.hengda.hengdasports.json2.LoginRsp;
+import com.hengda.hengdasports.json2.getUserInfo;
 
 import okhttp3.RequestBody;
 import retrofit2.Call;
@@ -21,7 +22,7 @@ public interface ApiService {
      * 登陆
      */
     @POST("/login/login")
-    Call<LoginRsp> login(@Body RequestBody body);
+    Call<getUserInfo> login(@Body RequestBody body);
 
     /**
      * 注册

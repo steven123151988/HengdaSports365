@@ -18,6 +18,7 @@ import com.hengda.hengdasports.R;
 import com.hengda.hengdasports.activity.mine.InsideMailActivity;
 import com.hengda.hengdasports.activity.mine.PayinActivity;
 import com.hengda.hengdasports.activity.mine.RechargeActivity;
+import com.hengda.hengdasports.activity.mine.SafecenterActivitty;
 import com.hengda.hengdasports.activity.mine.SetActivity;
 import com.hengda.hengdasports.activity.mine.TakeoutActivity;
 import com.hengda.hengdasports.activity.mine.WithdrawCashActivity;
@@ -87,9 +88,13 @@ public class MineFragment extends BaseFragment {
 
     @Override
     protected void initView() {
-        getUserInfo info= UserHelper.getInstance().getCurrUser();
-        tvName.setText(info.getData().getUserName());
-        tvBalance.setText(info.getData().getMoney());
+//        getUserInfo info = UserHelper.getInstance().getCurrUser();
+//        if (null==info.getData())
+//            return;
+//        if (null != info.getData().getUserName())
+//            tvName.setText(info.getData().getUserName());
+//        if (null != info.getData().getMoney())
+//            tvBalance.setText(info.getData().getMoney());
     }
 
 
@@ -151,6 +156,7 @@ public class MineFragment extends BaseFragment {
                 startActivity(new Intent(getActivity(), InsideMailActivity.class));
                 break;
             case R.id.ll_anquanzhongxin:
+                startActivity(new Intent(getActivity(), SafecenterActivitty.class));
                 break;
             case R.id.ll_xinxigonggao:
                 break;

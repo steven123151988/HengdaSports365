@@ -69,7 +69,7 @@ public class BetRecordsFragment extends BaseFragment {
 
         }
         //getChildFragmentManager()改成getChildFragmentManager()
-        pager.setAdapter(new Myadapter(getChildFragmentManager(), list));
+        pager.setAdapter(new Myadapter(getChildFragmentManager(), list,"","",""));
         /*Tab与ViewPager绑定*/
         tab.setupWithViewPager(pager);
     }

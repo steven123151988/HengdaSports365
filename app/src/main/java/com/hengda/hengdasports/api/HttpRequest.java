@@ -111,12 +111,12 @@ public class HttpRequest {
      * @param tag
      * @param callback
      */
-    public void login(Object tag, String account, String psw, HttpCallback<LoginRsp> callback) {
+    public void login(Object tag, String account, String psw, HttpCallback<getUserInfo> callback) {
         RequestBody body = new RequestBodyBuilder()
                 .addParam("username", account)
                 .addParam("password", psw)
                 .build();
-        Call<LoginRsp> call = mService.login(body);
+        Call<getUserInfo> call = mService.login(body);
         putCall(tag, call);
         call.enqueue(callback);
     }

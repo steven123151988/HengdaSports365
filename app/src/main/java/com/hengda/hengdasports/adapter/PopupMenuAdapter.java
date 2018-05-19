@@ -13,9 +13,7 @@ import com.hengda.hengdasports.json2.PopupMenuBean;
 
 import java.util.List;
 
-/**
- * Created by XIAOYAN on 2018/2/13.
- */
+
 
 public class PopupMenuAdapter extends BaseAdapter {
 
@@ -45,23 +43,22 @@ public class PopupMenuAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View view, ViewGroup parent) {
         ViewHolder viewHolder;
-        if(view==null){
+        if (view == null) {
             viewHolder = new ViewHolder();
             view = LayoutInflater.from(context).inflate(R.layout.popup_menu_item, null);
             viewHolder.tv_lottery_name = (TextView) view.findViewById(R.id.tv_lottery_name);
             viewHolder.ll_popupmenu = (RelativeLayout) view.findViewById(R.id.ll_popupmenu);
             view.setTag(viewHolder);
-        }else {
+        } else {
             viewHolder = (ViewHolder) view.getTag();
         }
 
-        viewHolder.tv_lottery_name.setText(list.get(position).getName());
-//        viewHolder.ll_popupmenu.getBackground().setAlpha(240);
+        viewHolder.tv_lottery_name.setText(list.get(position).getAlias());
 
         return view;
     }
 
-    class ViewHolder{
+    class ViewHolder {
         TextView tv_lottery_name;
         RelativeLayout ll_popupmenu;
     }
